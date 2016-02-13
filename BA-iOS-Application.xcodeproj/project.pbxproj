@@ -13,6 +13,7 @@
 		2714FD091C6EE4F90079D334 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714FD081C6EE4F90079D334 /* ProfileViewController.swift */; };
 		2714FD0C1C6EEE350079D334 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714FD0B1C6EEE350079D334 /* User.swift */; };
 		2714FD0E1C6EEEEB0079D334 /* GoodDeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714FD0D1C6EEEEB0079D334 /* GoodDeed.swift */; };
+		2724883E1C6EF242009626E9 /* Participation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2724883D1C6EF242009626E9 /* Participation.swift */; };
 		29C9E4A81C6ED8D90065EFB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C9E4A71C6ED8D90065EFB3 /* AppDelegate.swift */; };
 		29C9E4AA1C6ED8D90065EFB3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C9E4A91C6ED8D90065EFB3 /* FirstViewController.swift */; };
 		29C9E4AF1C6ED8D90065EFB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C9E4AD1C6ED8D90065EFB3 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		2714FD081C6EE4F90079D334 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2714FD0B1C6EEE350079D334 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2714FD0D1C6EEEEB0079D334 /* GoodDeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodDeed.swift; sourceTree = "<group>"; };
+		2724883D1C6EF242009626E9 /* Participation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Participation.swift; sourceTree = "<group>"; };
 		29C9E4A41C6ED8D90065EFB3 /* BA-iOS-Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BA-iOS-Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C9E4A71C6ED8D90065EFB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29C9E4A91C6ED8D90065EFB3 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			children = (
 				2714FD0B1C6EEE350079D334 /* User.swift */,
 				2714FD0D1C6EEEEB0079D334 /* GoodDeed.swift */,
+				2724883D1C6EF242009626E9 /* Participation.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				2714FD051C6EE4300079D334 /* UserRequest.swift in Sources */,
 				29C9E4A81C6ED8D90065EFB3 /* AppDelegate.swift in Sources */,
 				2714FD071C6EE4390079D334 /* Constants.swift in Sources */,
+				2724883E1C6EF242009626E9 /* Participation.swift in Sources */,
 				2714FD0C1C6EEE350079D334 /* User.swift in Sources */,
 				2714FD091C6EE4F90079D334 /* ProfileViewController.swift in Sources */,
 				29C9E4AA1C6ED8D90065EFB3 /* FirstViewController.swift in Sources */,
