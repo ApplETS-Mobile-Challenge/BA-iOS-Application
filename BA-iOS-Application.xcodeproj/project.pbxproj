@@ -10,12 +10,14 @@
 		2714FD041C6EE4300079D334 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714FD021C6EE4300079D334 /* BaseRequest.swift */; };
 		2714FD051C6EE4300079D334 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714FD031C6EE4300079D334 /* UserRequest.swift */; };
 		2714FD071C6EE4390079D334 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714FD061C6EE4390079D334 /* Constants.swift */; };
-		2714FD091C6EE4F90079D334 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714FD081C6EE4F90079D334 /* ProfileViewController.swift */; };
-		2714FD0C1C6EEE350079D334 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714FD0B1C6EEE350079D334 /* User.swift */; };
-		2714FD0E1C6EEEEB0079D334 /* GoodDeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714FD0D1C6EEEEB0079D334 /* GoodDeed.swift */; };
-		2724883E1C6EF242009626E9 /* Participation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2724883D1C6EF242009626E9 /* Participation.swift */; };
-		272488401C6EF4D9009626E9 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2724883F1C6EF4D9009626E9 /* Status.swift */; };
-		272488421C6EF53E009626E9 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272488411C6EF53E009626E9 /* DateHelper.swift */; };
+		294FF38E1C6EF18B00F6D103 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294FF38D1C6EF18B00F6D103 /* MapKit.framework */; };
+		294FF3901C6EFB9400F6D103 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294FF38F1C6EFB9400F6D103 /* Annotation.swift */; };
+		29881DCB1C6F036D00CB3E69 /* GoodDeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29881DC71C6F036D00CB3E69 /* GoodDeed.swift */; };
+		29881DCC1C6F036D00CB3E69 /* Participation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29881DC81C6F036D00CB3E69 /* Participation.swift */; };
+		29881DCD1C6F036D00CB3E69 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29881DC91C6F036D00CB3E69 /* Status.swift */; };
+		29881DCE1C6F036D00CB3E69 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29881DCA1C6F036D00CB3E69 /* User.swift */; };
+		29881DD01C6F037800CB3E69 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29881DCF1C6F037800CB3E69 /* DateHelper.swift */; };
+		29881DD21C6F038000CB3E69 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29881DD11C6F038000CB3E69 /* ProfileViewController.swift */; };
 		29C9E4A81C6ED8D90065EFB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C9E4A71C6ED8D90065EFB3 /* AppDelegate.swift */; };
 		29C9E4AA1C6ED8D90065EFB3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C9E4A91C6ED8D90065EFB3 /* FirstViewController.swift */; };
 		29C9E4AF1C6ED8D90065EFB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C9E4AD1C6ED8D90065EFB3 /* Main.storyboard */; };
@@ -32,12 +34,14 @@
 		2714FD021C6EE4300079D334 /* BaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 		2714FD031C6EE4300079D334 /* UserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		2714FD061C6EE4390079D334 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		2714FD081C6EE4F90079D334 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		2714FD0B1C6EEE350079D334 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		2714FD0D1C6EEEEB0079D334 /* GoodDeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodDeed.swift; sourceTree = "<group>"; };
-		2724883D1C6EF242009626E9 /* Participation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Participation.swift; sourceTree = "<group>"; };
-		2724883F1C6EF4D9009626E9 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
-		272488411C6EF53E009626E9 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		294FF38D1C6EF18B00F6D103 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		294FF38F1C6EFB9400F6D103 /* Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		29881DC71C6F036D00CB3E69 /* GoodDeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodDeed.swift; sourceTree = "<group>"; };
+		29881DC81C6F036D00CB3E69 /* Participation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Participation.swift; sourceTree = "<group>"; };
+		29881DC91C6F036D00CB3E69 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		29881DCA1C6F036D00CB3E69 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		29881DCF1C6F037800CB3E69 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		29881DD11C6F038000CB3E69 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		29C9E4A41C6ED8D90065EFB3 /* BA-iOS-Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BA-iOS-Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C9E4A71C6ED8D90065EFB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29C9E4A91C6ED8D90065EFB3 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				294FF38E1C6EF18B00F6D103 /* MapKit.framework in Frameworks */,
 				725886618F0857C1D9D6B24E /* Pods_BA_iOS_Application.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,25 +80,26 @@
 			name = Requests;
 			sourceTree = "<group>";
 		};
-		2714FD0A1C6EEE2B0079D334 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				2714FD0B1C6EEE350079D334 /* User.swift */,
-				2714FD0D1C6EEEEB0079D334 /* GoodDeed.swift */,
-				2724883D1C6EF242009626E9 /* Participation.swift */,
-				2724883F1C6EF4D9009626E9 /* Status.swift */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
 		2782F79D1C6EE30A009EB714 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				2714FD081C6EE4F90079D334 /* ProfileViewController.swift */,
+				29881DD11C6F038000CB3E69 /* ProfileViewController.swift */,
 				29C9E4A91C6ED8D90065EFB3 /* FirstViewController.swift */,
 				29E6D88F1C6EDFE3005A1B0C /* BAViewController.swift */,
+				294FF38F1C6EFB9400F6D103 /* Annotation.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		29881DC61C6F035400CB3E69 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				29881DC71C6F036D00CB3E69 /* GoodDeed.swift */,
+				29881DC81C6F036D00CB3E69 /* Participation.swift */,
+				29881DC91C6F036D00CB3E69 /* Status.swift */,
+				29881DCA1C6F036D00CB3E69 /* User.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		29C9E49B1C6ED8D90065EFB3 = {
@@ -117,7 +123,8 @@
 		29C9E4A61C6ED8D90065EFB3 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				2714FD0A1C6EEE2B0079D334 /* Models */,
+				29881DCF1C6F037800CB3E69 /* DateHelper.swift */,
+				29881DC61C6F035400CB3E69 /* Models */,
 				2714FD061C6EE4390079D334 /* Constants.swift */,
 				2714FD011C6EE41C0079D334 /* Requests */,
 				2782F79D1C6EE30A009EB714 /* ViewControllers */,
@@ -126,7 +133,6 @@
 				29C9E4B01C6ED8D90065EFB3 /* Assets.xcassets */,
 				29C9E4B21C6ED8D90065EFB3 /* LaunchScreen.storyboard */,
 				29C9E4B51C6ED8D90065EFB3 /* Info.plist */,
-				272488411C6EF53E009626E9 /* DateHelper.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -145,6 +151,7 @@
 		65606B2624089326F2A8622B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				294FF38D1C6EF18B00F6D103 /* MapKit.framework */,
 				FF4CCF6191C1F3AB8959B409 /* Pods_BA_iOS_Application.framework */,
 			);
 			name = Frameworks;
@@ -194,6 +201,12 @@
 				TargetAttributes = {
 					29C9E4A31C6ED8D90065EFB3 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = R686ETC73C;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -284,18 +297,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2714FD0E1C6EEEEB0079D334 /* GoodDeed.swift in Sources */,
 				2714FD041C6EE4300079D334 /* BaseRequest.swift in Sources */,
+				29881DCD1C6F036D00CB3E69 /* Status.swift in Sources */,
 				2714FD051C6EE4300079D334 /* UserRequest.swift in Sources */,
+				29881DCC1C6F036D00CB3E69 /* Participation.swift in Sources */,
 				29C9E4A81C6ED8D90065EFB3 /* AppDelegate.swift in Sources */,
-				272488401C6EF4D9009626E9 /* Status.swift in Sources */,
 				2714FD071C6EE4390079D334 /* Constants.swift in Sources */,
-				2724883E1C6EF242009626E9 /* Participation.swift in Sources */,
-				2714FD0C1C6EEE350079D334 /* User.swift in Sources */,
-				2714FD091C6EE4F90079D334 /* ProfileViewController.swift in Sources */,
-				272488421C6EF53E009626E9 /* DateHelper.swift in Sources */,
+				29881DCB1C6F036D00CB3E69 /* GoodDeed.swift in Sources */,
 				29C9E4AA1C6ED8D90065EFB3 /* FirstViewController.swift in Sources */,
+				294FF3901C6EFB9400F6D103 /* Annotation.swift in Sources */,
+				29881DD01C6F037800CB3E69 /* DateHelper.swift in Sources */,
+				29881DD21C6F038000CB3E69 /* ProfileViewController.swift in Sources */,
 				29E6D8901C6EDFE3005A1B0C /* BAViewController.swift in Sources */,
+				29881DCE1C6F036D00CB3E69 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,10 +430,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "AMC.BA-iOS-Application";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -429,10 +446,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/src/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "AMC.BA-iOS-Application";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
