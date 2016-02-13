@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.rootViewController = mainTabBarViewController
         
-        if let path = NSBundle.mainBundle().pathForResource("Config", ofType: "plist"), dict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
+        if let path = NSBundle.mainBundle().pathForResource("config", ofType: "plist"), dict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
             currentUserId = (dict["currentUserId"] as! Int)
         }
         

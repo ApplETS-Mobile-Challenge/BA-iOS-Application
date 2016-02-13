@@ -42,4 +42,15 @@ class GoodDeedRequest: BaseRequest {
             
         }
     }
+    
+    func postGoodDeed(userID: Int, title: String, description: String, address: String, startDate: Int, endDate: Int, lat: Double, long: Double, callback: (Bool)->()) {
+        Alamofire.request(.POST, Constants.api.baseURL + "gooddeeds", parameters: ["creator-user-id": userID, "title": title, "description": description, "address": address, "start-date": startDate, "end-date": endDate, "latitude": lat, "longitude": long], encoding: .JSON).response {
+            request, response, data, error in
+            if error == nil {
+                callback(true)
+            } else {
+                callback(false)
+            }
+        }
+    }
 }

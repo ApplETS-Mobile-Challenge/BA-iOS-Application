@@ -37,24 +37,36 @@ class AddBAFormViewController: FormViewController {
     }
     
     @IBAction func donePressed(sender: UIBarButtonItem) {
-        var formattedData = [String: AnyObject]()
-        for (tag, value) in form.values() {
-            guard let value = value else {
-                let ac = UIAlertController(title: "Erreur", message: "Le champs \(tag) n'est pas remplie", preferredStyle: .Alert)
-                ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-                self.presentViewController(ac, animated: true, completion: nil)
-                return
+        let userID = (UIApplication.sharedApplication().delegate as! AppDelegate).currentUserId
+        if let uid = userID {
+            var formattedData = [String: AnyObject]()
+            for (tag, value) in form.values() {
+                guard let value = value else {
+                    let ac = UIAlertController(title: "Erreur", message: "Le champs \(tag) n'est pas remplie", preferredStyle: .Alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                    self.presentViewController(ac, animated: true, completion: nil)
+                    return
+                }
+                if tag == "startDate" || tag == "endDate" {
+                    let date = (value as! NSDate).timeIntervalSince1970
+                    formattedData[tag] = date
+                } else if tag == "location" {
+                    let coordinate = (value as! CLLocation).coordinate
+                    formattedData[tag] = ["longitude": coordinate.longitude, "latitude": coordinate.latitude]
+                } else {
+                    formattedData[tag] = (value as! AnyObject)
+                }
             }
-            if tag == "startDate" || tag == "endDate" {
-               let date = (value as! NSDate).timeIntervalSince1970
-                formattedData[tag] = date
-            } else if tag == "location" {
-                let coordinate = (value as! CLLocation).coordinate
-                formattedData[tag] = ["longitude": coordinate.longitude, "latitude": coordinate.latitude]
-            } else {
-                formattedData[tag] = (value as! AnyObject)
-            }
+
+            GoodDeedRequest.sharedInstance.postGoodDeed(uid, title: formattedData["title"] as! String, description: formattedData["description"] as! String, address: "", startDate: formattedData["startDate"] as! Int, endDate: formattedData["endDate"] as! Int, lat: formattedData["location"]!["latitude"] as! Double, long: formattedData["location"]!["longitude"] as! Double, callback: { [unowned self] success in
+                if success {
+                    self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+                } else {
+                    let ac = UIAlertController(title: "Error", message: "Couldn't post to the super API", preferredStyle: .Alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                    self.presentViewController(ac, animated: true, completion: nil)
+                }
+            })
         }
-        let jsonData = try? NSJSONSerialization.dataWithJSONObject(formattedData, options: .PrettyPrinted)
     }
 }

@@ -98,19 +98,6 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
     func placeMarks() {
         
         UserRequest.sharedInstance.getUser() { (user: User) in
-            
-            for oneGoodDeed in user.goodDeeds {
-                
-                let coordinates: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: oneGoodDeed.lat, longitude: oneGoodDeed.long)
-                let annotation: Annotation! = Annotation.init(title: oneGoodDeed.title!, locationName: oneGoodDeed.description, discipline: oneGoodDeed.description, coordinate: coordinates)
-                self.annotationArray.append(annotation)
-                self.goodDeedArray.append(oneGoodDeed)
-                print(oneGoodDeed.address)
-                
-            }
-            
-            
-            //Maybe to be deleted
             self.goodDeedArray = user.goodDeeds
         }
         
