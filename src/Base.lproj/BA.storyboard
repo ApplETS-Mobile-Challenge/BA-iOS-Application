@@ -89,7 +89,7 @@
         <scene sceneID="eQz-53-RKR">
             <objects>
                 <navigationController title="Bonnes Actions" automaticallyAdjustsScrollViewInsets="NO" id="4mD-fE-ZkV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf" userLabel="BA"/>
+                    <tabBarItem key="tabBarItem" title="Carte" image="Map_Icon" id="acW-dT-cKf" userLabel="BA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ChA-Th-ux4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -155,6 +155,6 @@
     </scenes>
     <resources>
         <image name="Location" width="50" height="50"/>
-        <image name="first" width="30" height="30"/>
+        <image name="Map_Icon" width="30" height="30"/>
     </resources>
 </document>
