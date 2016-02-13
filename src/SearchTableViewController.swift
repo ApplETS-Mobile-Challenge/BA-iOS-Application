@@ -8,17 +8,24 @@
 
 import UIKit
 
-class SearchTableViewController: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
+class SearchTableViewController: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate, UISearchResultsUpdating {
 
     var users : [User] = []
-    var userSearchResults:Array<String>?
+    var userSearchResults = [User]()
     
+    let searchController = UISearchController(searchResultsController: nil)
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.loadUsers()
+        
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -38,18 +45,31 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, UIS
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchController.active && searchController.searchBar.text != "" {
+            return userSearchResults.count
+        }
+        
         return users.count
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Section \(section)"
+        return "Utilisateurs actifs"
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("UserCell", forIndexPath: indexPath)
-
+        let user: User
+        if searchController.active && searchController.searchBar.text != "" {
+            user = userSearchResults[indexPath.row]
+        } else {
+            user = users[indexPath.row]
+        }
+        cell.textLabel?.text = user.name
+        
+        
+        
         // Configure the cell...
-        cell.textLabel?.text = users[indexPath.row].name
+        //cell!.textLabel?.text = users[indexPath.row].name
 
         return cell
     }
@@ -64,13 +84,23 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, UIS
     
     
     
-    /*func filterContentForSearchName(searchText: String) {
+    func filterContentForSearchName(searchText: String, scope: String = "All") {
         //Filter the array using the filter method
-        //if self.users == nil {
-          //  self.userSearchResults = nil
-            //return
+        userSearchResults = users.filter { user in
+            return user.name.lowercaseString.containsString(searchText.lowercaseString)
         }
-    }*/
+        
+        tableView.reloadData()
+    }
+    
+    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String?) -> Bool {
+        self.filterContentForSearchName(searchString!)
+        return true
+    }
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        filterContentForSearchName(searchController.searchBar.text!)
+    }
     
 
 }
