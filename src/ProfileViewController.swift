@@ -85,16 +85,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.statusImage.image = cell.statusImage.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
             cell.statusImage.tintColor = UIColor(red: 0/255, green: 146/255, blue: 214/255, alpha: 1.0) /* #0092d6 */
             
-            let timeDifHours = participation.goodDeed.startDate.timeIntervalSinceNow
-            
-            if timeDifHours > 86400 {
-                cell.timeLabel.text = "\(Int(ceil(timeDifHours / 86400)))j"
-            } else if timeDifHours > 3600 {
-                cell.timeLabel.text = "\(Int(ceil(timeDifHours / 3600)))h"
-            } else {
-                cell.timeLabel.text = "\(Int(ceil(timeDifHours / 60)))m"
-            }
-            
         } else if indexPath.section == 2 {
             let participation = self.completedParticipations[indexPath.row]
             cell.participationImage.image = UIImage(named: participation.goodDeed.creator.photo)

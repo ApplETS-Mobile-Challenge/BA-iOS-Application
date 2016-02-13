@@ -84,7 +84,7 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
         let cell = tableView.dequeueReusableCellWithIdentifier("GoodDeedCell", forIndexPath: indexPath) as! GoodDeedCell
         cell.goodDeedTitleLabel.text = goodDeedArray[indexPath.row].title
         cell.goodDeedDescriptionLabel.text = goodDeedArray[indexPath.row].desc
-        cell.goodDeedImageView.image = UIImage(named: "vincent")
+        cell.goodDeedImageView.image = UIImage(named: "croix-rouge")
         if (self.userLocation != nil) {
             cell.goodDeedDistanceFromUserLabel.text = String(format:"%.2f", goodDeedArray[indexPath.row].getDistanceFromUser(self.userLocation)) + " km"
         }
@@ -97,12 +97,12 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
     
     func placeMarks() {
         
-        UserRequest.sharedInstance.getUser() { (user: User) in
+        UserRequest.sharedInstance.getUser2() { (user: User) in
             
             for oneGoodDeed in user.goodDeeds {
                 
                 let coordinates: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: oneGoodDeed.lat, longitude: oneGoodDeed.long)
-                let annotation: Annotation! = Annotation.init(title: oneGoodDeed.title!, locationName: oneGoodDeed.description, discipline: oneGoodDeed.description, coordinate: coordinates)
+                let annotation: Annotation! = Annotation.init(title: oneGoodDeed.title!, locationName: oneGoodDeed.desc, discipline: oneGoodDeed.desc, coordinate: coordinates)
                 self.annotationArray.append(annotation)
                 self.goodDeedArray.append(oneGoodDeed)
                 print(oneGoodDeed.address)
@@ -189,7 +189,7 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
         view.rightCalloutAccessoryView = button
         if let a = view.annotation as? GoodDeed {
             let imgView = UIImageView()
-            imgView.image = UIImage(named: a.creator.username)
+            imgView.image = UIImage(named: a.creator.photo)
             imgView.frame = CGRectMake(0, 0, 50, 50)
             view.leftCalloutAccessoryView = imgView
         }

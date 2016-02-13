@@ -11,6 +11,7 @@
 		2714FD041C6EE4300079D334 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714FD021C6EE4300079D334 /* BaseRequest.swift */; };
 		2714FD051C6EE4300079D334 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714FD031C6EE4300079D334 /* UserRequest.swift */; };
 		2714FD071C6EE4390079D334 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714FD061C6EE4390079D334 /* Constants.swift */; };
+		27284BD91C6FC160008D7D98 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27284BD81C6FC160008D7D98 /* NSDate.swift */; };
 		27C7020F1C6F098400FC475C /* ParticipationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C7020D1C6F098400FC475C /* ParticipationTableViewCell.swift */; };
 		27C702101C6F098400FC475C /* ParticipationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27C7020E1C6F098400FC475C /* ParticipationTableViewCell.xib */; };
 		27C702121C6F202B00FC475C /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C702111C6F202B00FC475C /* OffersViewController.swift */; };
@@ -50,6 +51,7 @@
 		2714FD021C6EE4300079D334 /* BaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 		2714FD031C6EE4300079D334 /* UserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		2714FD061C6EE4390079D334 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		27284BD81C6FC160008D7D98 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		27C7020D1C6F098400FC475C /* ParticipationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipationTableViewCell.swift; sourceTree = "<group>"; };
 		27C7020E1C6F098400FC475C /* ParticipationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParticipationTableViewCell.xib; sourceTree = "<group>"; };
 		27C702111C6F202B00FC475C /* OffersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				29C9E4B21C6ED8D90065EFB3 /* LaunchScreen.storyboard */,
 				29C9E4B51C6ED8D90065EFB3 /* Info.plist */,
 				FB4DD5DB1C6F9FF100CADA70 /* config.plist */,
+				27284BD81C6FC160008D7D98 /* NSDate.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				27C702121C6F202B00FC475C /* OffersViewController.swift in Sources */,
 				270716171C6FB5C10087D186 /* ParticipationRequest.swift in Sources */,
 				27C7021E1C6F6CA400FC475C /* OffersTableViewCell.swift in Sources */,
+				27284BD91C6FC160008D7D98 /* NSDate.swift in Sources */,
 				29C9E4A81C6ED8D90065EFB3 /* AppDelegate.swift in Sources */,
 				2714FD071C6EE4390079D334 /* Constants.swift in Sources */,
 				2937E7A51C6F5AC800014BDE /* GoodDeedCell.swift in Sources */,
