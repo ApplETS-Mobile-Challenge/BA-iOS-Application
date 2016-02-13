@@ -137,7 +137,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.profileImage.image = UIImage(named: user.photo)
             self.descriptionLabel.text = user.description
             self.starRating.rating = user.rating
-            self.title = user.username
+            self.navigationItem.title = user.username
             
             self.pendingParticipations = user.participations.filter({ p in p.status == Status.Pending})
             self.completedParticipations = user.participations.filter({ p in p.status == Status.OK})
