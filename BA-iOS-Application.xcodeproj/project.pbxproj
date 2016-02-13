@@ -21,6 +21,7 @@
 		29E6D88E1C6EDED5005A1B0C /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29E6D88D1C6EDED5005A1B0C /* Search.storyboard */; };
 		29E6D8901C6EDFE3005A1B0C /* BAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D88F1C6EDFE3005A1B0C /* BAViewController.swift */; };
 		725886618F0857C1D9D6B24E /* Pods_BA_iOS_Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4CCF6191C1F3AB8959B409 /* Pods_BA_iOS_Application.framework */; };
+		BA29B1011C6EEFD200F61A89 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA29B1001C6EEFD200F61A89 /* SearchTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		29E6D88F1C6EDFE3005A1B0C /* BAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BAViewController.swift; sourceTree = "<group>"; };
 		41864DB90E6FC6C612220D2C /* Pods-BA-iOS-Application.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BA-iOS-Application.release.xcconfig"; path = "Pods/Target Support Files/Pods-BA-iOS-Application/Pods-BA-iOS-Application.release.xcconfig"; sourceTree = "<group>"; };
 		41E6490237B698289CB876AF /* Pods-BA-iOS-Application.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BA-iOS-Application.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BA-iOS-Application/Pods-BA-iOS-Application.debug.xcconfig"; sourceTree = "<group>"; };
+		BA29B1001C6EEFD200F61A89 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		FF4CCF6191C1F3AB8959B409 /* Pods_BA_iOS_Application.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BA_iOS_Application.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,6 +73,7 @@
 				2714FD081C6EE4F90079D334 /* ProfileViewController.swift */,
 				29C9E4A91C6ED8D90065EFB3 /* FirstViewController.swift */,
 				29E6D88F1C6EDFE3005A1B0C /* BAViewController.swift */,
+				BA29B1001C6EEFD200F61A89 /* SearchTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				2714FD091C6EE4F90079D334 /* ProfileViewController.swift in Sources */,
 				29C9E4AA1C6ED8D90065EFB3 /* FirstViewController.swift in Sources */,
 				29E6D8901C6EDFE3005A1B0C /* BAViewController.swift in Sources */,
+				BA29B1011C6EEFD200F61A89 /* SearchTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
