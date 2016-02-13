@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		270716171C6FB5C10087D186 /* ParticipationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270716161C6FB5C10087D186 /* ParticipationRequest.swift */; };
 		2714FD041C6EE4300079D334 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714FD021C6EE4300079D334 /* BaseRequest.swift */; };
 		2714FD051C6EE4300079D334 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714FD031C6EE4300079D334 /* UserRequest.swift */; };
 		2714FD071C6EE4390079D334 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714FD061C6EE4390079D334 /* Constants.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		270716161C6FB5C10087D186 /* ParticipationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipationRequest.swift; sourceTree = "<group>"; };
 		2714FD021C6EE4300079D334 /* BaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 		2714FD031C6EE4300079D334 /* UserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		2714FD061C6EE4390079D334 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				2714FD021C6EE4300079D334 /* BaseRequest.swift */,
 				2714FD031C6EE4300079D334 /* UserRequest.swift */,
 				29C0C4EE1C6F8B630087943A /* GoodDeedRequest.swift */,
+				270716161C6FB5C10087D186 /* ParticipationRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				27C7021A1C6F6AAF00FC475C /* AuthUser.swift in Sources */,
 				29881DCC1C6F036D00CB3E69 /* Participation.swift in Sources */,
 				27C702121C6F202B00FC475C /* OffersViewController.swift in Sources */,
+				270716171C6FB5C10087D186 /* ParticipationRequest.swift in Sources */,
 				27C7021E1C6F6CA400FC475C /* OffersTableViewCell.swift in Sources */,
 				29C9E4A81C6ED8D90065EFB3 /* AppDelegate.swift in Sources */,
 				2714FD071C6EE4390079D334 /* Constants.swift in Sources */,

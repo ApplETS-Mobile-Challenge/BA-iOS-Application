@@ -61,10 +61,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         if indexPath.section == 0 {
             let participation = self.inProgressParticipations[indexPath.row]
             cell.participationImage.image = UIImage(named: participation.goodDeed.creator.photo)
-            cell.descriptionLabel.text = participation.goodDeed.description
+            cell.descriptionLabel.text = participation.goodDeed.desc
             cell.statusImage.image = UIImage(named: "star")
             cell.statusImage.image = cell.statusImage.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-            cell.statusImage.tintColor = UIColor(red: 0/255, green: 146/255, blue: 214/255, alpha: 1.0) /* #0092d6 */
+            cell.statusImage.tintColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0) /* #ffcc00 */
             
             let timeDifHours = participation.goodDeed.startDate.timeIntervalSinceNow
             
@@ -80,7 +80,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             let participation = self.pendingParticipations[indexPath.row]
             cell.participationImage.image = UIImage(named: participation.goodDeed.creator.photo)
-            cell.descriptionLabel.text = participation.goodDeed.description
+            cell.descriptionLabel.text = participation.goodDeed.desc
             cell.statusImage.image = UIImage(named: "clock")
             cell.statusImage.image = cell.statusImage.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
             cell.statusImage.tintColor = UIColor(red: 0/255, green: 146/255, blue: 214/255, alpha: 1.0) /* #0092d6 */
@@ -98,20 +98,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         } else if indexPath.section == 2 {
             let participation = self.completedParticipations[indexPath.row]
             cell.participationImage.image = UIImage(named: participation.goodDeed.creator.photo)
-            cell.descriptionLabel.text = participation.goodDeed.description
+            cell.descriptionLabel.text = participation.goodDeed.desc
             cell.statusImage.image = UIImage(named: "checkmark")
             cell.statusImage.image = cell.statusImage.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
             cell.statusImage.tintColor = UIColor(red: 45/255, green: 191/255, blue: 77/255, alpha: 1.0) /* #2dbf4d */
-            
-            let timeDifHours = participation.goodDeed.endDate.timeIntervalSinceNow
-            
-            if timeDifHours > 86400 {
-                cell.timeLabel.text = "\(Int(ceil(timeDifHours / 86400)))j"
-            } else if timeDifHours > 3600 {
-                cell.timeLabel.text = "\(Int(ceil(timeDifHours / 3600)))h"
-            } else {
-                cell.timeLabel.text = "\(Int(ceil(timeDifHours / 60)))m"
-            }
         }
         
         return cell
@@ -184,23 +174,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         //TODO: loaded avec le bon user
         UserRequest.sharedInstance.getUser() { (user: User) in
             self.user = user
-            self.loadParticipations()
+            self.loadOffers()
         }
     }
     
-    private func loadParticipations() {
-        //TODO: loaded avec le bon user
-//        ParticipationRequest.sharedInstance.getParticipationsByUser(self.user!.id) { (participations: [Participation]) in
-//            self.user?.participations = participations
-//            self.loadOffers()
-//        }
-    }
-    
     private func loadOffers() {
-//        ParticipationRequest.sharedInstance.getParticipationsByUser(self.user!.id) { (offers: [Participation]) in
-//            self.offers = offers
-//            self.initFields()
-//        }
+        let offers = UserRequest.sharedInstance.getOffers()
+        self.offers = offers
+        self.initFields()
     }
     
     private func initFields() {

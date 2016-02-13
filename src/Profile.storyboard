@@ -46,7 +46,7 @@
                                     <constraint firstAttribute="width" constant="100" id="SFW-yd-1fH"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFB-su-fgN" customClass="CosmosView" customModule="Cosmos">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EFB-su-fgN" customClass="CosmosView" customModule="Cosmos">
                                 <rect key="frame" x="140" y="155" width="120" height="20"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
