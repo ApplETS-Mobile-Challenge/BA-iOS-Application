@@ -74,6 +74,20 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, UIS
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let user: User
+        if searchController.active && searchController.searchBar.text != "" {
+            user = userSearchResults[indexPath.row]
+        } else {
+            user = users[indexPath.row]
+        }
+        
+        if let navigationController = self.navigationController {
+            let pvc = ProfileViewController.detailViewControllerForUser(user)
+            navigationController.pushViewController(pvc, animated: true)
+        }
+    }
+    
     private func loadUsers() {
         UserRequest.sharedInstance.getUsers() { (users: [User]) in
             self.users = users
