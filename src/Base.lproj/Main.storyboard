@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar View Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarViewController" id="49e-Tb-3d3" customClass="MainTabBarViewController" customModule="BA_iOS_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -39,7 +39,7 @@
         <scene sceneID="sdQ-4v-lkR">
             <objects>
                 <viewControllerPlaceholder storyboardName="Profile" id="0Wb-o5-O1f" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="8Na-mh-oKV"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="profile" id="8Na-mh-oKV"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mu5-DZ-qz4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -49,11 +49,15 @@
         <scene sceneID="nHN-BR-Rmg">
             <objects>
                 <viewControllerPlaceholder storyboardName="Search" id="5nZ-pj-j1g" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="3Au-yF-ksJ"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="search" id="3Au-yF-ksJ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pkB-Ws-IXI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="231.5" y="488"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="profile" width="30" height="30"/>
+        <image name="search" width="30" height="30"/>
+    </resources>
 </document>
