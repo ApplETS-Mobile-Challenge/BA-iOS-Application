@@ -15,6 +15,7 @@
 		27C702121C6F202B00FC475C /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C702111C6F202B00FC475C /* OffersViewController.swift */; };
 		27C702141C6F21F200FC475C /* OffersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27C702131C6F21F200FC475C /* OffersTableViewCell.xib */; };
 		27C702181C6F228900FC475C /* OffersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C702171C6F228900FC475C /* OffersTableViewCell.swift */; };
+		2937E7A51C6F5AC800014BDE /* GoodDeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2937E7A41C6F5AC800014BDE /* GoodDeedCell.swift */; };
 		294FF38E1C6EF18B00F6D103 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294FF38D1C6EF18B00F6D103 /* MapKit.framework */; };
 		294FF3901C6EFB9400F6D103 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294FF38F1C6EFB9400F6D103 /* Annotation.swift */; };
 		29881DCB1C6F036D00CB3E69 /* GoodDeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29881DC71C6F036D00CB3E69 /* GoodDeed.swift */; };
@@ -47,6 +48,7 @@
 		27C702111C6F202B00FC475C /* OffersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
 		27C702131C6F21F200FC475C /* OffersTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OffersTableViewCell.xib; sourceTree = "<group>"; };
 		27C702171C6F228900FC475C /* OffersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersTableViewCell.swift; sourceTree = "<group>"; };
+		2937E7A41C6F5AC800014BDE /* GoodDeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodDeedCell.swift; sourceTree = "<group>"; };
 		294FF38D1C6EF18B00F6D103 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		294FF38F1C6EFB9400F6D103 /* Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		29881DC71C6F036D00CB3E69 /* GoodDeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodDeed.swift; sourceTree = "<group>"; };
@@ -163,11 +165,12 @@
 				27C7020D1C6F098400FC475C /* ParticipationTableViewCell.swift */,
 				27C7020E1C6F098400FC475C /* ParticipationTableViewCell.xib */,
 				29E6D88B1C6EDD15005A1B0C /* Profile.storyboard */,
-				29E6D8881C6EDCEB005A1B0C /* BA.storyboard */,
 				29E6D88D1C6EDED5005A1B0C /* Search.storyboard */,
 				29C9E4AD1C6ED8D90065EFB3 /* Main.storyboard */,
 				27C702131C6F21F200FC475C /* OffersTableViewCell.xib */,
 				27C702171C6F228900FC475C /* OffersTableViewCell.swift */,
+				29E6D8881C6EDCEB005A1B0C /* BA.storyboard */,
+				2937E7A41C6F5AC800014BDE /* GoodDeedCell.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				27C702121C6F202B00FC475C /* OffersViewController.swift in Sources */,
 				29C9E4A81C6ED8D90065EFB3 /* AppDelegate.swift in Sources */,
 				2714FD071C6EE4390079D334 /* Constants.swift in Sources */,
+				2937E7A51C6F5AC800014BDE /* GoodDeedCell.swift in Sources */,
 				FB301C861C6EF9650049D107 /* LocationSelectionViewController.swift in Sources */,
 				FB301C841C6EF89F0049D107 /* LocationRow.swift in Sources */,
 				29881DCB1C6F036D00CB3E69 /* GoodDeed.swift in Sources */,

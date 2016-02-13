@@ -10,12 +10,13 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var baMapView: MKMapView!
     @IBOutlet weak var locationBtn: UIButton!
     @IBOutlet weak var listUIView: UIView!
     @IBOutlet weak var closeBtn: UIButton!
+    @IBOutlet weak var goodDeedTableView: UITableView!
     
     private var locationManager:CLLocationManager! = nil
     private var mapChangedFromUserInteraction = false
@@ -34,20 +35,30 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
         super.viewDidLoad()
         
         closeBtn.hidden = true
-        listViewYOriginalPosition = listUIView.frame.origin.y + 130 //Adding 70 for top layout guide
+        listViewYOriginalPosition = listUIView.frame.origin.y + 70 //Adding 70 for top layout guide
         
         //Handle touch on listView
         let tap = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
         listUIView.addGestureRecognizer(tap)
         
+        //TableView
+        goodDeedTableView.delegate = self
+        goodDeedTableView.dataSource = self
+        let tblView =  UIView(frame: CGRectZero)
+        goodDeedTableView.tableFooterView = tblView
+        goodDeedTableView?.tableFooterView!.hidden = true
+        goodDeedTableView.backgroundColor = UIColor.clearColor()
+        
         //Handle touch on close btn
         closeBtn.addTarget(self, action: Selector("closeListView"), forControlEvents: .TouchUpInside)
         
+        //MapView
         baMapView.showsUserLocation = true
         baMapView.delegate = self
         
         locationBtn.addTarget(self, action: Selector("resetUpdateLocation"), forControlEvents: .TouchUpInside)
         
+        //LocationManager
         locationManager = CLLocationManager()
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
@@ -60,6 +71,16 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
             print("Location service disabled")
         }
         
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("GoodDeedCell", forIndexPath: indexPath) as! GoodDeedCell
+
+        return cell
     }
     
     func placeMarks() {
