@@ -38,10 +38,9 @@ class OffersViewController : UITableViewController {
         
         cell.offerImage.image = UIImage(named: offer.user.photo)
         cell.offerDescription.text = offer.user.description
-        cell.offerButton.setImage(UIImage(named: "checkmark")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate), forState: .Normal)
-        cell.offerButton.tintColor = UIColor(red: 45/255, green: 191/255, blue: 77/255, alpha: 1.0) /* #2dbf4d */
         cell.offerButton.addTarget(self, action: "selectOffer:", forControlEvents: .TouchUpInside)
         cell.offerButton.tag = indexPath.row
+        cell.offerButton.layer.cornerRadius = 5
         
         return cell
     }
@@ -50,13 +49,25 @@ class OffersViewController : UITableViewController {
         return self.offers.count
     }
     
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            self.offers.removeAtIndex(indexPath.row)
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
+    }
+    
     func selectOffer(sender: UIButton!) {
-        let alert = UIAlertController(title: "Avertissement", message: "Êtes-vous certain de vouloir procéder", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "", message: "Êtes-vous certain(e) de vouloir accepter cette offre?", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
             switch action.style{
             case .Default:
-                self.offers.removeAtIndex(sender.tag)
-                self.tableView.reloadData()
+                let indexPath = self.tableView.indexPathForCell(sender.superview?.superview as! UITableViewCell)
+                self.offers.removeAtIndex(indexPath!.row)
+                self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
                 
             case .Cancel:
                 print("cancel")
