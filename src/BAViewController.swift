@@ -160,10 +160,12 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
         button.frame = CGRectMake(0, 0, 23, 23)
         button.addTarget(self, action: "baDetailTapped:", forControlEvents: .TouchUpInside)
         view.rightCalloutAccessoryView = button
-        let imgView = UIImageView()
-        imgView.image = UIImage(named: "maxime")
-        imgView.frame = CGRectMake(0, 0, 50, 50)
-        view.leftCalloutAccessoryView = imgView
+        if let a = view.annotation as? GoodDeed {
+            let imgView = UIImageView()
+            imgView.image = UIImage(named: a.creator.name.lowercaseString)
+            imgView.frame = CGRectMake(0, 0, 50, 50)
+            view.leftCalloutAccessoryView = imgView
+        }
         selectedGoodDeed = view.annotation as? GoodDeed
     }
     
