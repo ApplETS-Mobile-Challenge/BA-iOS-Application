@@ -9,10 +9,25 @@
 import UIKit
 
 class BASubscriptionViewController: UIViewController {
+    
+    var goodDeed: GoodDeed?
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var descTextView: UITextView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var dateDebutLabel: UILabel!
+    @IBOutlet weak var dateFinLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        if let gd = goodDeed {
+            self.title = gd.title
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = "YYYY/MM/dd - HH:mm"
+            self.descTextView.text = gd.desc
+            self.dateDebutLabel.text = formatter.stringFromDate(gd.startDate)
+            self.dateFinLabel.text = formatter.stringFromDate(gd.endDate)
+        }
     }
 
     override func didReceiveMemoryWarning() {

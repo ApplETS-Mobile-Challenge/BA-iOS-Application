@@ -16,6 +16,7 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
     @IBOutlet weak var locationBtn: UIButton!
     @IBOutlet weak var listUIView: UIView!
     @IBOutlet weak var closeBtn: UIButton!
+    var selectedGoodDeed: GoodDeed?
     
     private let annotationSegueIdentifier = "AnnotationModalSegueIdentifier"
     
@@ -27,7 +28,6 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
     
     //Fictive GoodDeed to mock the map
     var goodDeedArray: [GoodDeed] = []
-    var annotationArray: [Annotation] = []
     
     var firstGoodDeed: GoodDeed?
     
@@ -67,19 +67,10 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
     func placeMarks() {
         
         UserRequest.sharedInstance.getUser() { (user: User) in
-            
-            for oneGoodDeed in user.goodDeeds {
-                
-                let coordinates: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: oneGoodDeed.lat, longitude: oneGoodDeed.long)
-                let annotation: Annotation! = Annotation.init(title: oneGoodDeed.title, locationName: oneGoodDeed.description, discipline: oneGoodDeed.description, coordinate: coordinates)
-                self.annotationArray.append(annotation)
-                print(oneGoodDeed.address)
-                
-            }
-            
+            self.goodDeedArray = user.goodDeeds
         }
         
-        self.baMapView.addAnnotations(self.annotationArray)
+        self.baMapView.addAnnotations(self.goodDeedArray)
         
     }
     
@@ -152,6 +143,7 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
         imgView.image = UIImage(named: "maxime")
         imgView.frame = CGRectMake(0, 0, 50, 50)
         view.leftCalloutAccessoryView = imgView
+        selectedGoodDeed = view.annotation as? GoodDeed
     }
     
     
@@ -181,7 +173,7 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
             if id == annotationSegueIdentifier {
                 let nav = segue.destinationViewController as! UINavigationController
                 let vc = nav.viewControllers.first as! BASubscriptionViewController
-                
+                vc.goodDeed = selectedGoodDeed
             }
         }
         super.prepareForSegue(segue, sender: sender)
