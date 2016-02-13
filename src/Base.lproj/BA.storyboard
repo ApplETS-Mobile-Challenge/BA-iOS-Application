@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="-566" y="816"/>
         </scene>
-        <!--View Controller-->
+        <!--AddBA Form View Controller-->
         <scene sceneID="jgI-7R-KRC">
             <objects>
-                <viewController id="2LB-wD-qas" sceneMemberID="viewController">
+                <viewController id="2LB-wD-qas" customClass="AddBAFormViewController" customModule="BA_iOS_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qvw-AY-yfV"/>
                         <viewControllerLayoutGuide type="bottom" id="uK9-Fc-Ozz"/>
