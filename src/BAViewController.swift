@@ -26,9 +26,11 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
     private var shouldUpdateLocation = true
     private var listViewIsOpen = false
     private var listViewYOriginalPosition: CGFloat! = nil
+    private var userLocation: CLLocation! = nil
     
     //Fictive GoodDeed to mock the map
     var goodDeedArray: [GoodDeed] = []
+    var annotationArray: [Annotation] = []
     
     var firstGoodDeed: GoodDeed?
     
@@ -75,18 +77,40 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return goodDeedArray.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("GoodDeedCell", forIndexPath: indexPath) as! GoodDeedCell
-
+        cell.goodDeedTitleLabel.text = goodDeedArray[indexPath.row].title
+        cell.goodDeedDescriptionLabel.text = goodDeedArray[indexPath.row].desc
+        cell.goodDeedImageView.image = UIImage(named: "vincent")
+        if (self.userLocation != nil) {
+            cell.goodDeedDistanceFromUserLabel.text = String(format:"%.2f", goodDeedArray[indexPath.row].getDistanceFromUser(self.userLocation)) + " km"
+        }
+        else {
+            cell.goodDeedDistanceFromUserLabel.text = "-"
+        }
+        
         return cell
     }
     
     func placeMarks() {
         
         UserRequest.sharedInstance.getUser() { (user: User) in
+            
+            for oneGoodDeed in user.goodDeeds {
+                
+                let coordinates: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: oneGoodDeed.lat, longitude: oneGoodDeed.long)
+                let annotation: Annotation! = Annotation.init(title: oneGoodDeed.title!, locationName: oneGoodDeed.description, discipline: oneGoodDeed.description, coordinate: coordinates)
+                self.annotationArray.append(annotation)
+                self.goodDeedArray.append(oneGoodDeed)
+                print(oneGoodDeed.address)
+                
+            }
+            
+            
+            //Maybe to be deleted
             self.goodDeedArray = user.goodDeeds
         }
         
@@ -172,8 +196,9 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if shouldUpdateLocation {
-            let userLocation = CLLocation(latitude: (manager.location?.coordinate.latitude)! , longitude: (manager.location?.coordinate.longitude)!)
+            self.userLocation = CLLocation(latitude: (manager.location?.coordinate.latitude)! , longitude: (manager.location?.coordinate.longitude)!)
             centerMapOnLocation(userLocation)
+            self.goodDeedTableView.reloadData()
         }
     }
     
