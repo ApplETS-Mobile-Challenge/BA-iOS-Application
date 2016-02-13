@@ -19,7 +19,7 @@ class UserRequest: BaseRequest {
     }
     
     // Exemple pour faire les requêtes
-//    func getUser(id: Int, callback: (User?) -> Void) {
+//    func getUser(id: Int, callback: (User) -> Void) {
 //        self.get("users/\(id)", parameters: nil) { (json: JSON?) in
 //            if let data = json {
 //                if data["user"] != nil {
