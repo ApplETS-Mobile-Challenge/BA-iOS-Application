@@ -123,7 +123,11 @@
                                 <action selector="cancelPressed:" destination="2LB-wD-qas" id="fxj-y8-ZUc"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="L2q-k3-Vvw"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="L2q-k3-Vvw">
+                            <connections>
+                                <action selector="donePressed:" destination="2LB-wD-qas" id="8Um-So-Xdq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajJ-T7-IDF" userLabel="First Responder" sceneMemberID="firstResponder"/>

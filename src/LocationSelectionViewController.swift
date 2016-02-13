@@ -10,55 +10,18 @@ import UIKit
 import MapKit
 import Eureka
 
-public class LocationSelectionViewController : UIViewController, TypedRowControllerType, MKMapViewDelegate, CLLocationManagerDelegate {
+public class LocationSelectionViewController : UIViewController, TypedRowControllerType, MKMapViewDelegate, CLLocationManagerDelegate, UIGestureRecognizerDelegate {
     
     public var row: RowOf<CLLocation>!
     public var completionCallback : ((UIViewController) -> ())?
     public var locationManager: CLLocationManager!
+    var annotation: Annotation? = nil
     
     lazy var mapView : MKMapView = { [unowned self] in
         let v = MKMapView(frame: self.view.bounds)
         v.autoresizingMask = UIViewAutoresizing.FlexibleWidth.union(UIViewAutoresizing.FlexibleHeight)
         return v
         }()
-    
-    lazy var pinView: UIImageView = { [unowned self] in
-        let v = UIImageView(frame: CGRectMake(0, 0, 50, 50))
-        v.image = UIImage(named: "map_pin", inBundle: NSBundle(forClass: LocationSelectionViewController.self), compatibleWithTraitCollection: nil)
-        v.image = v.image?.imageWithRenderingMode(.AlwaysTemplate)
-        v.tintColor = self.view.tintColor
-        v.backgroundColor = .clearColor()
-        v.clipsToBounds = true
-        v.contentMode = .ScaleAspectFit
-        v.userInteractionEnabled = false
-        return v
-        }()
-    
-    let width: CGFloat = 10.0
-    let height: CGFloat = 5.0
-    
-    lazy var ellipse: UIBezierPath = { [unowned self] in
-        let ellipse = UIBezierPath(ovalInRect: CGRectMake(0 , 0, self.width, self.height))
-        return ellipse
-        }()
-    
-    
-    lazy var ellipsisLayer: CAShapeLayer = { [unowned self] in
-        let layer = CAShapeLayer()
-        layer.bounds = CGRectMake(0, 0, self.width, self.height)
-        layer.path = self.ellipse.CGPath
-        layer.fillColor = UIColor.grayColor().CGColor
-        layer.fillRule = kCAFillRuleNonZero
-        layer.lineCap = kCALineCapButt
-        layer.lineDashPattern = nil
-        layer.lineDashPhase = 0.0
-        layer.lineJoin = kCALineJoinMiter
-        layer.lineWidth = 1.0
-        layer.miterLimit = 10.0
-        layer.strokeColor = UIColor.grayColor().CGColor
-        return layer
-        }()
-    
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -76,7 +39,9 @@ public class LocationSelectionViewController : UIViewController, TypedRowControl
     public override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(mapView)
-        
+        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "mapLongPress:")
+        longPressGestureRecognizer.minimumPressDuration = 1
+        mapView.addGestureRecognizer(longPressGestureRecognizer)
         mapView.delegate = self
         
         let button = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "tappedDone:")
@@ -84,8 +49,7 @@ public class LocationSelectionViewController : UIViewController, TypedRowControl
         navigationItem.rightBarButtonItem = button
         
         if let value = row.value {
-            let region = MKCoordinateRegionMakeWithDistance(value.coordinate, 400, 400)
-            mapView.setRegion(region, animated: true)
+            updateMapPosition(value.coordinate)
         }
         else{
             if (CLLocationManager.locationServicesEnabled()) {
@@ -100,18 +64,16 @@ public class LocationSelectionViewController : UIViewController, TypedRowControl
         
     }
     
-    public override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        let center = mapView.convertCoordinate(mapView.centerCoordinate, toPointToView: pinView)
-        pinView.center = CGPointMake(center.x, center.y - (CGRectGetHeight(pinView.bounds)/2))
-        ellipsisLayer.position = center
+    public func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        if !annotation.isKindOfClass(MKUserLocation) {
+            let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationIdentifier")
+            pinView.animatesDrop = true
+            return pinView
+        }
+        return nil
     }
     
-    
     func tappedDone(sender: UIBarButtonItem){
-        let target = mapView.convertPoint(ellipsisLayer.position, toCoordinateFromView: mapView)
-        row.value? = CLLocation(latitude: target.latitude, longitude: target.longitude)
         completionCallback?(self)
     }
     
@@ -124,37 +86,35 @@ public class LocationSelectionViewController : UIViewController, TypedRowControl
         title = "\(latitude), \(longitude)"
     }
     
-    public func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        
-        let pinAnnotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "annotation")
-        pinAnnotationView.pinColor = MKPinAnnotationColor.Red
-        pinAnnotationView.draggable = false
-        pinAnnotationView.animatesDrop = true
-        return pinAnnotationView
-    }
-    
-    public func mapView(mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
-        ellipsisLayer.transform = CATransform3DMakeScale(0.5, 0.5, 1)
-        UIView.animateWithDuration(0.2, animations: { [weak self] in
-            self?.pinView.center = CGPointMake(self!.pinView.center.x, self!.pinView.center.y - 10)
-            })
-    }
-    
-    public func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-        ellipsisLayer.transform = CATransform3DIdentity
-        UIView.animateWithDuration(0.2, animations: { [weak self] in
-            self?.pinView.center = CGPointMake(self!.pinView.center.x, self!.pinView.center.y + 10)
-            })
-        updateTitle()
-    }
-    
     public func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation: CLLocation = locations.last!
         row?.value = userLocation
         if let value = row.value {
-            let region = MKCoordinateRegionMakeWithDistance(value.coordinate, 400, 400)
-            mapView.setRegion(region, animated: true)
+            updateMapPosition(value.coordinate)
+            mapView.showsUserLocation = true
         }
         manager.stopUpdatingLocation()
+    }
+    
+    
+    public func mapLongPress(recognizer: UIGestureRecognizer) {
+        if recognizer.state == .Began {
+            if let a = self.annotation {
+                mapView.removeAnnotation(a)
+            }
+            let touchPoint = recognizer.locationInView(mapView)
+            let coordinate = mapView.convertPoint(touchPoint, toCoordinateFromView: mapView)
+            row?.value = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+            let annotation = Annotation(title: "", locationName: "", discipline: "", coordinate: coordinate)
+            self.annotation = annotation
+            mapView.addAnnotation(annotation)
+            updateMapPosition(coordinate)
+            updateTitle()
+        }
+    }
+    
+    public func updateMapPosition(coordinate: CLLocationCoordinate2D) {
+        let region = MKCoordinateRegionMakeWithDistance(coordinate, 400, 400)
+        mapView.setRegion(region, animated: true)
     }
 }
