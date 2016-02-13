@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainTabBarViewController = storyboard.instantiateViewControllerWithIdentifier("MainTabBarViewController") as! MainTabBarViewController
+        let mainTabBarViewController = storyboard.instantiateViewControllerWithIdentifier("MainTabBarViewController") as! UITabBarController
         mainTabBarViewController.selectedIndex = 1
         
         self.window?.rootViewController = mainTabBarViewController
