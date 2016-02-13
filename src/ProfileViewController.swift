@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  ProfileViewController.swift
 //  BA-iOS-Application
 //
 //  Created by Samuel Bellerose on 2016-02-12.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +19,8 @@ class SecondViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    
 
 }
 
