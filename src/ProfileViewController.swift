@@ -33,6 +33,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.tableView.registerNib(participationCellNib, forCellReuseIdentifier: ProfileViewController.participationCellIdentifier)
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.rowHeight = 70.0
+        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
         
         self.loadUser()
     }
@@ -46,7 +48,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let cell = tableView.dequeueReusableCellWithIdentifier(ProfileViewController.participationCellIdentifier, forIndexPath: indexPath) as! ParticipationTableViewCell
         
-        if indexPath.section == 1 {
+        if indexPath.section == 0 {
             
             let participation = self.pendingParticipations[indexPath.row]
             
@@ -55,7 +57,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.descriptionLabel.text = participation.goodDeed.description
             cell.statusImage.image = UIImage(named: "clock")
             
-        } else if indexPath.section == 2 {
+        } else if indexPath.section == 1 {
             let participation = self.completedParticipations[indexPath.row]
             
             //TODO setter image
@@ -81,9 +83,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 1 {
+        if section == 0 {
             return self.pendingParticipations.count
-        } else if section == 2 {
+        } else if section == 1 {
             return self.completedParticipations.count
         }
         
@@ -92,10 +94,27 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            return "Offres en attente"
+            return "PARTICIPATIONS EN ATTENTE"
         } else {
-            return "Offres completées"
+            return "PARTICIPATION COMPLÉTÉES"
         }
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 && self.pendingParticipations.count == 0 {
+            return 0
+        } else if section == 1 && self.completedParticipations.count == 0 {
+            return 0
+        }
+        
+        return 40
+    }
+    
+    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
+    {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = UIFont(name: (header.textLabel?.font?.fontName)!, size: 12)!
+        header.textLabel?.textColor = UIColor.darkGrayColor()
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -114,9 +133,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     private func loadUser() {
-//        UserRequest.sharedInstance.getUser(self.user.id) { (user: User) in
-//            self.user = user
-//        }
+        UserRequest.sharedInstance.getUser() { (user: User) in
+            self.user = user
+            
+            self.pendingParticipations = user.participations.filter({ p in p.status == Status.Pending})
+            self.completedParticipations = user.participations.filter({ p in p.status == Status.OK})
+            
+            self.tableView.reloadData()
+        }
     }
 }
 

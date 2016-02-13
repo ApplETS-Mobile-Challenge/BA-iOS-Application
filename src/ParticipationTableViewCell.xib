@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" rowHeight="70" id="zl4-Cq-hjh" customClass="ParticipationTableViewCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ParticipationTableViewCell" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="ParticipationTableViewCell" rowHeight="70" id="zl4-Cq-hjh" customClass="ParticipationTableViewCell" customModule="BA_iOS_Application" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zl4-Cq-hjh" id="SAp-Cp-zx9">
@@ -55,7 +55,7 @@
             </tableViewCellContentView>
             <inset key="separatorInset" minX="65" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
-                <outlet property="descriptionLabel" destination="OLi-GK-Mv0" id="51a-dX-vO8"/>
+                <outlet property="descriptionLabel" destination="OLi-GK-Mv0" id="QNB-M2-qja"/>
                 <outlet property="participationImage" destination="o8B-rr-NQg" id="see-sx-b6W"/>
                 <outlet property="statusImage" destination="W75-Jd-X0S" id="ZLg-dq-aT3"/>
             </connections>
