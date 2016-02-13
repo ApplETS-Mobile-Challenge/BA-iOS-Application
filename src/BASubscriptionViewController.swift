@@ -27,6 +27,8 @@ class BASubscriptionViewController: UIViewController {
             self.descTextView.text = gd.desc
             self.dateDebutLabel.text = formatter.stringFromDate(gd.startDate)
             self.dateFinLabel.text = formatter.stringFromDate(gd.endDate)
+            self.usernameLabel.text = gd.creator.name
+            self.imageView.image = UIImage(named: gd.creator.name)
         }
     }
 
