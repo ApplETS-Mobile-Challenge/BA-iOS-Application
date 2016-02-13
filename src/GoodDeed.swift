@@ -7,7 +7,10 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class GoodDeed {
-    
+    init(json: JSON) {
+        
+    }
 }
