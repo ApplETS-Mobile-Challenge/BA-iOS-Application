@@ -11,6 +11,6 @@ import UIKit
 class ParticipationTableViewCell: UITableViewCell {
     
     @IBOutlet weak var participationImage: UIImageView!
-    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var statusImage: UIImageView!
+    @IBOutlet weak var descriptionLabel: UILabel!
 }
