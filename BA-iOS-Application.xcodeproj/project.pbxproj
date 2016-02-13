@@ -10,6 +10,8 @@
 		2714FD041C6EE4300079D334 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714FD021C6EE4300079D334 /* BaseRequest.swift */; };
 		2714FD051C6EE4300079D334 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714FD031C6EE4300079D334 /* UserRequest.swift */; };
 		2714FD071C6EE4390079D334 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714FD061C6EE4390079D334 /* Constants.swift */; };
+		27C7020F1C6F098400FC475C /* ParticipationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C7020D1C6F098400FC475C /* ParticipationTableViewCell.swift */; };
+		27C702101C6F098400FC475C /* ParticipationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27C7020E1C6F098400FC475C /* ParticipationTableViewCell.xib */; };
 		294FF38E1C6EF18B00F6D103 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294FF38D1C6EF18B00F6D103 /* MapKit.framework */; };
 		294FF3901C6EFB9400F6D103 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294FF38F1C6EFB9400F6D103 /* Annotation.swift */; };
 		29881DCB1C6F036D00CB3E69 /* GoodDeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29881DC71C6F036D00CB3E69 /* GoodDeed.swift */; };
@@ -34,6 +36,8 @@
 		2714FD021C6EE4300079D334 /* BaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 		2714FD031C6EE4300079D334 /* UserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		2714FD061C6EE4390079D334 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		27C7020D1C6F098400FC475C /* ParticipationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipationTableViewCell.swift; sourceTree = "<group>"; };
+		27C7020E1C6F098400FC475C /* ParticipationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParticipationTableViewCell.xib; sourceTree = "<group>"; };
 		294FF38D1C6EF18B00F6D103 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		294FF38F1C6EFB9400F6D103 /* Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		29881DC71C6F036D00CB3E69 /* GoodDeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodDeed.swift; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 		29E6D8871C6EDC68005A1B0C /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				27C7020D1C6F098400FC475C /* ParticipationTableViewCell.swift */,
+				27C7020E1C6F098400FC475C /* ParticipationTableViewCell.xib */,
 				29C9E4AD1C6ED8D90065EFB3 /* Main.storyboard */,
 				29E6D88B1C6EDD15005A1B0C /* Profile.storyboard */,
 				29E6D8881C6EDCEB005A1B0C /* BA.storyboard */,
@@ -201,7 +207,7 @@
 				TargetAttributes = {
 					29C9E4A31C6ED8D90065EFB3 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = R686ETC73C;
+						DevelopmentTeam = CTF4C374A8;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -237,6 +243,7 @@
 				29C9E4B11C6ED8D90065EFB3 /* Assets.xcassets in Resources */,
 				29E6D88C1C6EDD15005A1B0C /* Profile.storyboard in Resources */,
 				29C9E4AF1C6ED8D90065EFB3 /* Main.storyboard in Resources */,
+				27C702101C6F098400FC475C /* ParticipationTableViewCell.xib in Resources */,
 				29E6D88E1C6EDED5005A1B0C /* Search.storyboard in Resources */,
 				29E6D88A1C6EDCEB005A1B0C /* BA.storyboard in Resources */,
 			);
@@ -307,6 +314,7 @@
 				29C9E4AA1C6ED8D90065EFB3 /* FirstViewController.swift in Sources */,
 				294FF3901C6EFB9400F6D103 /* Annotation.swift in Sources */,
 				29881DD01C6F037800CB3E69 /* DateHelper.swift in Sources */,
+				27C7020F1C6F098400FC475C /* ParticipationTableViewCell.swift in Sources */,
 				29881DD21C6F038000CB3E69 /* ProfileViewController.swift in Sources */,
 				29E6D8901C6EDFE3005A1B0C /* BAViewController.swift in Sources */,
 				29881DCE1C6F036D00CB3E69 /* User.swift in Sources */,
