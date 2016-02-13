@@ -17,6 +17,8 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
     @IBOutlet weak var listUIView: UIView!
     @IBOutlet weak var closeBtn: UIButton!
     
+    private let annotationSegueIdentifier = "AnnotationModalSegueIdentifier"
+    
     private var locationManager:CLLocationManager! = nil
     private var mapChangedFromUserInteraction = false
     private var shouldUpdateLocation = true
@@ -140,7 +142,18 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
             shouldUpdateLocation = false
         }
     }
-
+    
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        let button = UIButton(type: .DetailDisclosure)
+        button.frame = CGRectMake(0, 0, 23, 23)
+        button.addTarget(self, action: "baDetailTapped:", forControlEvents: .TouchUpInside)
+        view.rightCalloutAccessoryView = button
+        let imgView = UIImageView()
+        imgView.image = UIImage(named: "maxime")
+        imgView.frame = CGRectMake(0, 0, 50, 50)
+        view.leftCalloutAccessoryView = imgView
+    }
+    
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if shouldUpdateLocation {
@@ -157,6 +170,21 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print(error.debugDescription)
+    }
+    
+    func baDetailTapped(sender: UIButton) {
+        performSegueWithIdentifier(annotationSegueIdentifier, sender: sender)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let id = segue.identifier {
+            if id == annotationSegueIdentifier {
+                let nav = segue.destinationViewController as! UINavigationController
+                let vc = nav.viewControllers.first as! BASubscriptionViewController
+                
+            }
+        }
+        super.prepareForSegue(segue, sender: sender)
     }
     
 }
