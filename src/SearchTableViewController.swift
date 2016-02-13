@@ -53,13 +53,13 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, UIS
         return cell
     }
     
-    func filterContentForSearchName(searchText: String) {
+    /*func filterContentForSearchName(searchText: String) {
         //Filter the array using the filter method
-        if self.users == nil {
-            self.userSearchResults = nil
-            return
+        //if self.users == nil {
+          //  self.userSearchResults = nil
+            //return
         }
-    }
+    }*/
     
 
 }
