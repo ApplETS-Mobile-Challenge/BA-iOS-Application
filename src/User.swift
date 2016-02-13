@@ -10,6 +10,7 @@ import Foundation
 import SwiftyJSON
 
 class User {
+    var id: Int
     var username: String
     var name: String
     var photo: String
@@ -19,6 +20,7 @@ class User {
     var goodDeeds: [GoodDeed]
     
     init(json: JSON) {
+        self.id = json["id"].intValue
         self.username = json["username"].string!
         self.name = json["name"].string!
         self.photo = json["photo"].string!
@@ -38,5 +40,16 @@ class User {
                 self.goodDeeds.append(GoodDeed(json: goodDeed))
             }
         }
+    }
+    
+    init(id: Int, username: String, name: String, photo: String, rating: Int, description: String, participations: [Participation], goodDeeds: [GoodDeed]) {
+        self.id = id
+        self.username = username
+        self.name = name
+        self.photo = photo
+        self.rating = rating
+        self.description = description
+        self.participations = participations
+        self.goodDeeds = goodDeeds
     }
 }

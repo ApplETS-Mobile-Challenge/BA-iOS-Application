@@ -30,4 +30,15 @@ class GoodDeed {
         self.status = Status(rawValue: json["status"]["name"].string!)!
         self.creator = User(json: json["creator"])
     }
+    
+    init(id: Int, title: String, description: String, address: String, startDate: NSDate, endDate: NSDate, status: Status, creator: User) {
+        self.id = id
+        self.title = title
+        self.description = description
+        self.address = address
+        self.startDate = startDate
+        self.endDate = endDate
+        self.status = status
+        self.creator = creator
+    }
 }
