@@ -8,6 +8,7 @@ target "BA-iOS-Application" do
 	pod 'MBProgressHUD', '~> 0.9.1'
 	pod 'Whisper'
   pod 'Eureka', '~> 1.3'
+  pod 'Cosmos', '~> 1.1'
 end
 
 use_frameworks!

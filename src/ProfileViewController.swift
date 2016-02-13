@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Cosmos
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var subDescriptionLabel: UILabel!
+    @IBOutlet weak var starRating: CosmosView!
     @IBOutlet weak var pendingOffersButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
 
@@ -120,7 +121,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    class func detailViewControllerForGame(user: User) -> ProfileViewController {
+    class func detailViewControllerForUser(user: User) -> ProfileViewController {
         let storyboard = UIStoryboard(name: ProfileViewController.storyboardName, bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier(ProfileViewController.viewControllerIdentifier) as! ProfileViewController
         
@@ -135,7 +136,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             self.profileImage.image = UIImage(named: user.photo)
             self.descriptionLabel.text = user.description
-            self.subDescriptionLabel.text = "\(user.rating) étoiles"
+            self.starRating.rating = user.rating
             self.title = user.username
             
             self.pendingParticipations = user.participations.filter({ p in p.status == Status.Pending})

@@ -34,10 +34,12 @@
             </objects>
             <point key="canvasLocation" x="1279" y="2072"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Recherche-->
         <scene sceneID="efA-uo-RkB">
             <objects>
                 <navigationController id="M3g-pC-ZGp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Recherche" image="search" id="Alu-j7-Gom"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8oK-rE-fZP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -51,4 +53,7 @@
             <point key="canvasLocation" x="458" y="2071"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="search" width="30" height="30"/>
+    </resources>
 </document>
