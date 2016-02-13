@@ -12,15 +12,12 @@ import SwiftyJSON
 class Participation {
     var goodDeed: GoodDeed
     var status: Status
+    var user: User
     
     init(json: JSON) {
         self.goodDeed = GoodDeed(json: json["goodDeed"])
         self.status = Status(rawValue: json["status"]["name"].string!)!
+        self.user = User(json: json["user"])
     }
 }
 
-enum Status: String {
-    case Pending = "Pending"
-    case Declined = "Declined"
-    case OK = "OK"
-}
