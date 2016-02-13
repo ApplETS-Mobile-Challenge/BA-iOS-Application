@@ -41,6 +41,7 @@
 		FB301C861C6EF9650049D107 /* LocationSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB301C851C6EF9650049D107 /* LocationSelectionViewController.swift */; };
 		FB301C891C6F18AE0049D107 /* AddBAFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB301C881C6F18AE0049D107 /* AddBAFormViewController.swift */; };
 		FB4DD5D21C6F53F200CADA70 /* BASubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4DD5D11C6F53F200CADA70 /* BASubscriptionViewController.swift */; };
+		FB4DD5DC1C6F9FF100CADA70 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB4DD5DB1C6F9FF100CADA70 /* config.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		FB301C851C6EF9650049D107 /* LocationSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSelectionViewController.swift; sourceTree = "<group>"; };
 		FB301C881C6F18AE0049D107 /* AddBAFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBAFormViewController.swift; sourceTree = "<group>"; };
 		FB4DD5D11C6F53F200CADA70 /* BASubscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BASubscriptionViewController.swift; sourceTree = "<group>"; };
+		FB4DD5DB1C6F9FF100CADA70 /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		FF4CCF6191C1F3AB8959B409 /* Pods_BA_iOS_Application.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BA_iOS_Application.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -166,6 +168,7 @@
 				29C9E4B01C6ED8D90065EFB3 /* Assets.xcassets */,
 				29C9E4B21C6ED8D90065EFB3 /* LaunchScreen.storyboard */,
 				29C9E4B51C6ED8D90065EFB3 /* Info.plist */,
+				FB4DD5DB1C6F9FF100CADA70 /* config.plist */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				29E6D88C1C6EDD15005A1B0C /* Profile.storyboard in Resources */,
 				29C9E4AF1C6ED8D90065EFB3 /* Main.storyboard in Resources */,
 				27C702101C6F098400FC475C /* ParticipationTableViewCell.xib in Resources */,
+				FB4DD5DC1C6F9FF100CADA70 /* config.plist in Resources */,
 				27C702141C6F21F200FC475C /* OffersTableViewCell.xib in Resources */,
 				29E6D88E1C6EDED5005A1B0C /* Search.storyboard in Resources */,
 				29E6D88A1C6EDCEB005A1B0C /* BA.storyboard in Resources */,
