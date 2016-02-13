@@ -216,6 +216,9 @@
                                 <state key="normal" title="Se proposer">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="propositionTapped" destination="Fe4-Px-AxK" eventType="touchUpInside" id="LAZ-LN-sPd"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ng3-om-6jd">
                                 <rect key="frame" x="176" y="72" width="404" height="125"/>
