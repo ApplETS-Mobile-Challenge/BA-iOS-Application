@@ -33,6 +33,10 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        GoodDeedRequest.sharedInstance.getGoodDeeds { (GoodDeed) -> Void in
+            print("test")
+        }
+        
         closeBtn.hidden = true
         listViewYOriginalPosition = listUIView.frame.origin.y + 70 //Adding 70 for top layout guide
         

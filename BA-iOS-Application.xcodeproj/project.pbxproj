@@ -27,6 +27,7 @@
 		29881DCE1C6F036D00CB3E69 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29881DCA1C6F036D00CB3E69 /* User.swift */; };
 		29881DD01C6F037800CB3E69 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29881DCF1C6F037800CB3E69 /* DateHelper.swift */; };
 		29881DD21C6F038000CB3E69 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29881DD11C6F038000CB3E69 /* ProfileViewController.swift */; };
+		29C0C4EF1C6F8B630087943A /* GoodDeedRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0C4EE1C6F8B630087943A /* GoodDeedRequest.swift */; };
 		29C9E4A81C6ED8D90065EFB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C9E4A71C6ED8D90065EFB3 /* AppDelegate.swift */; };
 		29C9E4AA1C6ED8D90065EFB3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C9E4A91C6ED8D90065EFB3 /* FirstViewController.swift */; };
 		29C9E4AF1C6ED8D90065EFB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C9E4AD1C6ED8D90065EFB3 /* Main.storyboard */; };
@@ -61,6 +62,7 @@
 		29881DCA1C6F036D00CB3E69 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		29881DCF1C6F037800CB3E69 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		29881DD11C6F038000CB3E69 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		29C0C4EE1C6F8B630087943A /* GoodDeedRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodDeedRequest.swift; sourceTree = "<group>"; };
 		29C9E4A41C6ED8D90065EFB3 /* BA-iOS-Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BA-iOS-Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C9E4A71C6ED8D90065EFB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29C9E4A91C6ED8D90065EFB3 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			children = (
 				2714FD021C6EE4300079D334 /* BaseRequest.swift */,
 				2714FD031C6EE4300079D334 /* UserRequest.swift */,
+				29C0C4EE1C6F8B630087943A /* GoodDeedRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				29881DD01C6F037800CB3E69 /* DateHelper.swift in Sources */,
 				27C7020F1C6F098400FC475C /* ParticipationTableViewCell.swift in Sources */,
 				27C702181C6F228900FC475C /* (null) in Sources */,
+				29C0C4EF1C6F8B630087943A /* GoodDeedRequest.swift in Sources */,
 				29881DD21C6F038000CB3E69 /* ProfileViewController.swift in Sources */,
 				29E6D8901C6EDFE3005A1B0C /* BAViewController.swift in Sources */,
 				29881DCE1C6F036D00CB3E69 /* User.swift in Sources */,
