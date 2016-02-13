@@ -14,14 +14,12 @@
 		27C702101C6F098400FC475C /* ParticipationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27C7020E1C6F098400FC475C /* ParticipationTableViewCell.xib */; };
 		27C702121C6F202B00FC475C /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C702111C6F202B00FC475C /* OffersViewController.swift */; };
 		27C702141C6F21F200FC475C /* OffersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27C702131C6F21F200FC475C /* OffersTableViewCell.xib */; };
-		27C702181C6F228900FC475C /* (null) in Sources */ = {isa = PBXBuildFile; };
 		27C7021A1C6F6AAF00FC475C /* AuthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C702191C6F6AAF00FC475C /* AuthUser.swift */; };
 		27C7021C1C6F6C9900FC475C /* GoodDeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C7021B1C6F6C9900FC475C /* GoodDeed.swift */; };
 		27C7021E1C6F6CA400FC475C /* OffersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C7021D1C6F6CA400FC475C /* OffersTableViewCell.swift */; };
 		2937E7A51C6F5AC800014BDE /* GoodDeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2937E7A41C6F5AC800014BDE /* GoodDeedCell.swift */; };
 		294FF38E1C6EF18B00F6D103 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294FF38D1C6EF18B00F6D103 /* MapKit.framework */; };
 		294FF3901C6EFB9400F6D103 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294FF38F1C6EFB9400F6D103 /* Annotation.swift */; };
-		29881DCB1C6F036D00CB3E69 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		29881DCC1C6F036D00CB3E69 /* Participation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29881DC81C6F036D00CB3E69 /* Participation.swift */; };
 		29881DCD1C6F036D00CB3E69 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29881DC91C6F036D00CB3E69 /* Status.swift */; };
 		29881DCE1C6F036D00CB3E69 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29881DCA1C6F036D00CB3E69 /* User.swift */; };
@@ -362,13 +360,11 @@
 				2937E7A51C6F5AC800014BDE /* GoodDeedCell.swift in Sources */,
 				FB301C861C6EF9650049D107 /* LocationSelectionViewController.swift in Sources */,
 				FB301C841C6EF89F0049D107 /* LocationRow.swift in Sources */,
-				29881DCB1C6F036D00CB3E69 /* (null) in Sources */,
 				29C9E4AA1C6ED8D90065EFB3 /* FirstViewController.swift in Sources */,
 				27C7021C1C6F6C9900FC475C /* GoodDeed.swift in Sources */,
 				294FF3901C6EFB9400F6D103 /* Annotation.swift in Sources */,
 				29881DD01C6F037800CB3E69 /* DateHelper.swift in Sources */,
 				27C7020F1C6F098400FC475C /* ParticipationTableViewCell.swift in Sources */,
-				27C702181C6F228900FC475C /* (null) in Sources */,
 				29C0C4EF1C6F8B630087943A /* GoodDeedRequest.swift in Sources */,
 				29881DD21C6F038000CB3E69 /* ProfileViewController.swift in Sources */,
 				29E6D8901C6EDFE3005A1B0C /* BAViewController.swift in Sources */,

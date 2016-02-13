@@ -15,4 +15,6 @@ class AuthUser: User {
         }
         return Singleton.instance
     }
+    
+    var pendingOffers: [Participation] = []
 }

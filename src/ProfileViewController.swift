@@ -27,6 +27,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     var user: User?
     var pendingParticipations: [Participation] = []
     var completedParticipations: [Participation] = []
+    var inProgressParticipations: [Participation] = []
     var offers: [Participation] = []
     
     override func viewDidLoad() {
@@ -58,6 +59,24 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
         if indexPath.section == 0 {
+            let participation = self.inProgressParticipations[indexPath.row]
+            cell.participationImage.image = UIImage(named: participation.goodDeed.creator.photo)
+            cell.descriptionLabel.text = participation.goodDeed.description
+            cell.statusImage.image = UIImage(named: "star")
+            cell.statusImage.image = cell.statusImage.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+            cell.statusImage.tintColor = UIColor(red: 0/255, green: 146/255, blue: 214/255, alpha: 1.0) /* #0092d6 */
+            
+            let timeDifHours = participation.goodDeed.startDate.timeIntervalSinceNow
+            
+            if timeDifHours > 86400 {
+                cell.timeLabel.text = "\(Int(ceil(timeDifHours / 86400)))j"
+            } else if timeDifHours > 3600 {
+                cell.timeLabel.text = "\(Int(ceil(timeDifHours / 3600)))h"
+            } else {
+                cell.timeLabel.text = "\(Int(ceil(timeDifHours / 60)))m"
+            }
+            
+        } else if indexPath.section == 1 {
             
             let participation = self.pendingParticipations[indexPath.row]
             cell.participationImage.image = UIImage(named: participation.goodDeed.creator.photo)
@@ -76,7 +95,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 cell.timeLabel.text = "\(Int(ceil(timeDifHours / 60)))m"
             }
             
-        } else if indexPath.section == 1 {
+        } else if indexPath.section == 2 {
             let participation = self.completedParticipations[indexPath.row]
             cell.participationImage.image = UIImage(named: participation.goodDeed.creator.photo)
             cell.descriptionLabel.text = participation.goodDeed.description
@@ -100,8 +119,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
+            return self.inProgressParticipations.count
+        }
+        else if section == 1 {
             return self.pendingParticipations.count
-        } else if section == 1 {
+        }
+        else if section == 2 {
             return self.completedParticipations.count
         }
         
@@ -110,16 +133,20 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
+            return "PARTICIPATIONS EN COURS"
+        } else if section == 1 {
             return "PARTICIPATIONS EN ATTENTE"
         } else {
-            return "PARTICIPATION COMPLÉTÉES"
+            return "PARTICIPATIONS COMPLÉTÉES"
         }
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 0 && self.pendingParticipations.count == 0 {
+        if section == 0 && self.inProgressParticipations.count == 0 {
             return 0
-        } else if section == 1 && self.completedParticipations.count == 0 {
+        } else if section == 1 && self.pendingParticipations.count == 0 {
+            return 0
+        } else if section == 2 && self.completedParticipations.count == 0 {
             return 0
         }
         
@@ -157,15 +184,23 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         //TODO: loaded avec le bon user
         UserRequest.sharedInstance.getUser() { (user: User) in
             self.user = user
-            self.loadOffers()
+            self.loadParticipations()
         }
     }
     
+    private func loadParticipations() {
+        //TODO: loaded avec le bon user
+//        ParticipationRequest.sharedInstance.getParticipationsByUser(self.user!.id) { (participations: [Participation]) in
+//            self.user?.participations = participations
+//            self.loadOffers()
+//        }
+    }
+    
     private func loadOffers() {
-        UserRequest.sharedInstance.getOffers() { (offers: [Participation]) in
-            self.offers = offers
-            self.initFields()
-        }
+//        ParticipationRequest.sharedInstance.getParticipationsByUser(self.user!.id) { (offers: [Participation]) in
+//            self.offers = offers
+//            self.initFields()
+//        }
     }
     
     private func initFields() {
@@ -188,7 +223,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         self.pendingParticipations = self.user!.participations.filter({ p in p.status == Status.Pending})
-        self.completedParticipations = self.user!.participations.filter({ p in p.status == Status.OK})
+        self.completedParticipations = self.user!.participations.filter({ p in p.status == Status.OK && p.goodDeed.endDate.timeIntervalSinceNow < 0})
+        self.inProgressParticipations = self.user!.participations.filter({ p in p.status == Status.OK && p.goodDeed.endDate.timeIntervalSinceNow > 0})
         
         self.tableView.reloadData()
     }
