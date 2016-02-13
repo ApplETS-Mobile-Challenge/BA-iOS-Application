@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -12,24 +12,24 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zl4-Cq-hjh" id="SAp-Cp-zx9">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o8B-rr-NQg">
-                        <rect key="frame" x="8" y="10" width="50" height="50"/>
+                        <rect key="frame" x="20" y="10" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="5Dq-GJ-asY"/>
                             <constraint firstAttribute="height" constant="50" id="ptk-hr-7KS"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, adipiscing elit. Cras vel metus in lorem sodales eleife" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLi-GK-Mv0">
-                        <rect key="frame" x="66" y="10" width="218" height="50"/>
+                        <rect key="frame" x="78" y="10" width="194" height="50"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W75-Jd-X0S">
-                        <rect key="frame" x="292" y="24" width="20" height="20"/>
+                        <rect key="frame" x="280" y="24" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="26M-CJ-01W"/>
                             <constraint firstAttribute="height" constant="20" id="i40-34-msv"/>
@@ -42,10 +42,10 @@
                     <constraint firstItem="OLi-GK-Mv0" firstAttribute="top" secondItem="SAp-Cp-zx9" secondAttribute="topMargin" constant="2" id="ejf-9t-9mk"/>
                     <constraint firstItem="W75-Jd-X0S" firstAttribute="centerY" secondItem="SAp-Cp-zx9" secondAttribute="centerY" id="mfD-1R-v93"/>
                     <constraint firstItem="W75-Jd-X0S" firstAttribute="leading" secondItem="OLi-GK-Mv0" secondAttribute="trailing" constant="8" id="oBh-qW-0fa"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="W75-Jd-X0S" secondAttribute="trailing" id="rQU-dr-Mtt"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="W75-Jd-X0S" secondAttribute="trailing" constant="12" id="rQU-dr-Mtt"/>
                     <constraint firstItem="OLi-GK-Mv0" firstAttribute="height" secondItem="o8B-rr-NQg" secondAttribute="height" id="sKj-id-mpo"/>
                     <constraint firstItem="W75-Jd-X0S" firstAttribute="top" secondItem="SAp-Cp-zx9" secondAttribute="topMargin" constant="-1" id="va3-oi-5mS"/>
-                    <constraint firstItem="o8B-rr-NQg" firstAttribute="leading" secondItem="SAp-Cp-zx9" secondAttribute="leadingMargin" id="vwI-Pk-4nw"/>
+                    <constraint firstItem="o8B-rr-NQg" firstAttribute="leading" secondItem="SAp-Cp-zx9" secondAttribute="leadingMargin" constant="12" id="vwI-Pk-4nw"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
@@ -53,7 +53,7 @@
                     </mask>
                 </variation>
             </tableViewCellContentView>
-            <inset key="separatorInset" minX="65" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <inset key="separatorInset" minX="75" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="descriptionLabel" destination="OLi-GK-Mv0" id="QNB-M2-qja"/>
                 <outlet property="participationImage" destination="o8B-rr-NQg" id="see-sx-b6W"/>

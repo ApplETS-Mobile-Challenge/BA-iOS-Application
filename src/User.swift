@@ -14,7 +14,7 @@ class User {
     var username: String
     var name: String
     var photo: String
-    var rating: Int
+    var rating: Double
     var description: String
     var participations: [Participation]
     var goodDeeds: [GoodDeed]
@@ -24,7 +24,7 @@ class User {
         self.username = json["username"].string!
         self.name = json["name"].string!
         self.photo = json["photo"].string!
-        self.rating = json["rating"].intValue
+        self.rating = json["rating"].doubleValue
         self.description = json["description"].string!
         
         self.participations = []
@@ -42,7 +42,7 @@ class User {
         }
     }
     
-    init(id: Int, username: String, name: String, photo: String, rating: Int, description: String, participations: [Participation], goodDeeds: [GoodDeed]) {
+    init(id: Int, username: String, name: String, photo: String, rating: Double, description: String, participations: [Participation], goodDeeds: [GoodDeed]) {
         self.id = id
         self.username = username
         self.name = name

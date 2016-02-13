@@ -1,35 +1,72 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4mD-fE-ZkV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4mD-fE-ZkV">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--BA-->
+        <!--Bonnes Actions-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController storyboardIdentifier="BAViewController" title="BA" id="9pv-A4-QxB" customClass="BAViewController" customModule="BA_iOS_Application" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BAViewController" title="Bonnes Actions" id="9pv-A4-QxB" customClass="BAViewController" customModule="BA_iOS_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="iBj-kK-Zur">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="iBj-kK-Zur">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cd7-kH-zh1">
+                                <rect key="frame" x="15" y="41" width="53" height="53"/>
+                                <state key="normal" image="Location"/>
+                            </button>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oqd-LZ-vLl">
+                                <rect key="frame" x="0.0" y="437" width="600" height="600.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bonnes Actions À Proximité" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DzN-ga-ez3">
+                                        <rect key="frame" x="134" y="8" width="330" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="33" id="RsU-MQ-KjL"/>
+                                            <constraint firstAttribute="width" constant="330" id="VWV-2e-Zkd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBC-N6-UQ4">
+                                        <rect key="frame" x="531" y="10" width="49" height="30"/>
+                                        <state key="normal" title="Fermer"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="cBC-N6-UQ4" secondAttribute="trailing" constant="20" id="56X-S8-RmG"/>
+                                    <constraint firstItem="DzN-ga-ez3" firstAttribute="top" secondItem="oqd-LZ-vLl" secondAttribute="topMargin" id="7fb-Bk-9uq"/>
+                                    <constraint firstItem="cBC-N6-UQ4" firstAttribute="top" secondItem="oqd-LZ-vLl" secondAttribute="top" constant="10" id="fW0-E1-oI5"/>
+                                    <constraint firstItem="DzN-ga-ez3" firstAttribute="centerX" secondItem="oqd-LZ-vLl" secondAttribute="centerX" id="woq-Sp-pBR"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="iBj-kK-Zur" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" id="J9d-Dp-Olg"/>
                             <constraint firstItem="iBj-kK-Zur" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="JZg-hS-iTD"/>
+                            <constraint firstItem="oqd-LZ-vLl" firstAttribute="height" secondItem="iBj-kK-Zur" secondAttribute="height" id="MuZ-iZ-33Z"/>
+                            <constraint firstItem="oqd-LZ-vLl" firstAttribute="leading" secondItem="iBj-kK-Zur" secondAttribute="leading" id="PUd-Gx-jjF"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="oqd-LZ-vLl" secondAttribute="top" constant="50" id="QqJ-aV-cGb"/>
                             <constraint firstItem="iBj-kK-Zur" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="URv-KA-Ff0"/>
                             <constraint firstItem="iBj-kK-Zur" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="YZq-Qr-A9L"/>
+                            <constraint firstItem="iBj-kK-Zur" firstAttribute="top" secondItem="cd7-kH-zh1" secondAttribute="bottom" constant="-66" id="Zn8-Xv-eGd"/>
+                            <constraint firstItem="oqd-LZ-vLl" firstAttribute="width" secondItem="iBj-kK-Zur" secondAttribute="width" id="bbX-o3-hLU"/>
+                            <constraint firstItem="iBj-kK-Zur" firstAttribute="leading" secondItem="cd7-kH-zh1" secondAttribute="trailing" constant="-68" id="sWW-5e-h56"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="BA" id="upr-Ie-UMW">
+                    <navigationItem key="navigationItem" title="Bonnes Actions" id="upr-Ie-UMW">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="74E-tR-9Qc">
                             <connections>
                                 <segue destination="WlK-FW-gsk" kind="modal" id="RbC-Dq-Tbd"/>
@@ -39,17 +76,20 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="baMapView" destination="iBj-kK-Zur" id="rpA-dT-U3Q"/>
+                        <outlet property="closeBtn" destination="cBC-N6-UQ4" id="HQg-RY-Z1e"/>
+                        <outlet property="listUIView" destination="oqd-LZ-vLl" id="I7Q-kW-21q"/>
+                        <outlet property="locationBtn" destination="cd7-kH-zh1" id="fud-WR-tQH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="246" y="807"/>
         </scene>
-        <!--BA-->
+        <!--Bonnes Actions-->
         <scene sceneID="eQz-53-RKR">
             <objects>
-                <navigationController title="BA" automaticallyAdjustsScrollViewInsets="NO" id="4mD-fE-ZkV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf" userLabel="BA"/>
+                <navigationController title="Bonnes Actions" automaticallyAdjustsScrollViewInsets="NO" id="4mD-fE-ZkV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Carte" image="Map_Icon" id="acW-dT-cKf" userLabel="BA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ChA-Th-ux4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -83,17 +123,21 @@
                                 <action selector="cancelPressed:" destination="2LB-wD-qas" id="fxj-y8-ZUc"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="L2q-k3-Vvw"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="L2q-k3-Vvw">
+                            <connections>
+                                <action selector="donePressed:" destination="2LB-wD-qas" id="8Um-So-Xdq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajJ-T7-IDF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1772" y="816"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Carte-->
         <scene sceneID="8AO-Ai-1XU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WlK-FW-gsk" sceneMemberID="viewController">
+                <navigationController title="Carte" automaticallyAdjustsScrollViewInsets="NO" id="WlK-FW-gsk" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aaO-Fw-4l9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -110,6 +154,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="Location" width="50" height="50"/>
+        <image name="Map_Icon" width="30" height="30"/>
     </resources>
 </document>
