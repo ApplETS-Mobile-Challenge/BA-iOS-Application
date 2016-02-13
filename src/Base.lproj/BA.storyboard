@@ -26,7 +26,7 @@
                                 <state key="normal" image="Location"/>
                             </button>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oqd-LZ-vLl">
-                                <rect key="frame" x="0.0" y="317" width="600" height="601"/>
+                                <rect key="frame" x="0.0" y="504" width="600" height="601"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="À Proximité" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DzN-ga-ez3">
                                         <rect key="frame" x="0.0" y="5" width="600" height="33"/>
