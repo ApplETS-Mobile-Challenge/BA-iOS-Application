@@ -109,12 +109,15 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
                 
             }
             
-            
             //Maybe to be deleted
             self.goodDeedArray = user.goodDeeds
         }
         
         self.baMapView.addAnnotations(self.goodDeedArray)
+        
+//        GoodDeedRequest.sharedInstance.getGoodDeeds { (GoodDeed) -> Void in
+//            print("test")
+//        }
         
     }
     

@@ -18,16 +18,21 @@ class GoodDeedRequest: BaseRequest {
         return Singleton.instance
     }
     
-    func getGoodDeeds(callback: (GoodDeed) -> Void) {
-        self.get("gooddeeds-without-participation-ok", parameters: nil) { (json: JSON?) in
-            if let data = json {
-                if data["user"] != nil {
-                    let user = User(json: data["user"])
-//                    callback(user)
-                } else {
-//                    callback(nil)
-                }
-            }
-        }
-    }
+//    func getGoodDeeds(callback: ([GoodDeed]) -> Void) {
+//        self.get("gooddeeds-without-participation-ok", parameters: nil) { (json: JSON?) in
+////            if let data = json {
+////                
+//////                for (_,subJson):(String, JSON) in data {
+////                
+//////                    let goodDeed = GoodDeed(json: subJson)
+//////                    
+//////                    let lat = subJson["latitude"].rawString()
+//////                    let link = subJson["description"].rawString()
+////                
+////                }
+////                
+////            }
+////            callback(
+//        }
+//    }
 }
