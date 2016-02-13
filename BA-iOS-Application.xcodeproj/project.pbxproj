@@ -31,6 +31,9 @@
 		29E6D8901C6EDFE3005A1B0C /* BAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D88F1C6EDFE3005A1B0C /* BAViewController.swift */; };
 		725886618F0857C1D9D6B24E /* Pods_BA_iOS_Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4CCF6191C1F3AB8959B409 /* Pods_BA_iOS_Application.framework */; };
 		BA29B1011C6EEFD200F61A89 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA29B1001C6EEFD200F61A89 /* SearchTableViewController.swift */; };
+		FB301C841C6EF89F0049D107 /* LocationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB301C831C6EF89F0049D107 /* LocationRow.swift */; };
+		FB301C861C6EF9650049D107 /* LocationSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB301C851C6EF9650049D107 /* LocationSelectionViewController.swift */; };
+		FB301C891C6F18AE0049D107 /* AddBAFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB301C881C6F18AE0049D107 /* AddBAFormViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +64,9 @@
 		41864DB90E6FC6C612220D2C /* Pods-BA-iOS-Application.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BA-iOS-Application.release.xcconfig"; path = "Pods/Target Support Files/Pods-BA-iOS-Application/Pods-BA-iOS-Application.release.xcconfig"; sourceTree = "<group>"; };
 		41E6490237B698289CB876AF /* Pods-BA-iOS-Application.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BA-iOS-Application.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BA-iOS-Application/Pods-BA-iOS-Application.debug.xcconfig"; sourceTree = "<group>"; };
 		BA29B1001C6EEFD200F61A89 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		FB301C831C6EF89F0049D107 /* LocationRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationRow.swift; sourceTree = "<group>"; };
+		FB301C851C6EF9650049D107 /* LocationSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSelectionViewController.swift; sourceTree = "<group>"; };
+		FB301C881C6F18AE0049D107 /* AddBAFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBAFormViewController.swift; sourceTree = "<group>"; };
 		FF4CCF6191C1F3AB8959B409 /* Pods_BA_iOS_Application.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BA_iOS_Application.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -89,6 +95,8 @@
 		2782F79D1C6EE30A009EB714 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FB301C881C6F18AE0049D107 /* AddBAFormViewController.swift */,
+				FB301C851C6EF9650049D107 /* LocationSelectionViewController.swift */,
 				29881DD11C6F038000CB3E69 /* ProfileViewController.swift */,
 				29C9E4A91C6ED8D90065EFB3 /* FirstViewController.swift */,
 				29E6D88F1C6EDFE3005A1B0C /* BAViewController.swift */,
@@ -150,12 +158,13 @@
 		29E6D8871C6EDC68005A1B0C /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FB301C821C6EF85E0049D107 /* FormRow */,
 				27C7020D1C6F098400FC475C /* ParticipationTableViewCell.swift */,
 				27C7020E1C6F098400FC475C /* ParticipationTableViewCell.xib */,
-				29C9E4AD1C6ED8D90065EFB3 /* Main.storyboard */,
 				29E6D88B1C6EDD15005A1B0C /* Profile.storyboard */,
 				29E6D8881C6EDCEB005A1B0C /* BA.storyboard */,
 				29E6D88D1C6EDED5005A1B0C /* Search.storyboard */,
+				29C9E4AD1C6ED8D90065EFB3 /* Main.storyboard */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -176,6 +185,14 @@
 				41864DB90E6FC6C612220D2C /* Pods-BA-iOS-Application.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		FB301C821C6EF85E0049D107 /* FormRow */ = {
+			isa = PBXGroup;
+			children = (
+				FB301C831C6EF89F0049D107 /* LocationRow.swift */,
+			);
+			name = FormRow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,9 +330,12 @@
 				2714FD041C6EE4300079D334 /* BaseRequest.swift in Sources */,
 				29881DCD1C6F036D00CB3E69 /* Status.swift in Sources */,
 				2714FD051C6EE4300079D334 /* UserRequest.swift in Sources */,
+				FB301C891C6F18AE0049D107 /* AddBAFormViewController.swift in Sources */,
 				29881DCC1C6F036D00CB3E69 /* Participation.swift in Sources */,
 				29C9E4A81C6ED8D90065EFB3 /* AppDelegate.swift in Sources */,
 				2714FD071C6EE4390079D334 /* Constants.swift in Sources */,
+				FB301C861C6EF9650049D107 /* LocationSelectionViewController.swift in Sources */,
+				FB301C841C6EF89F0049D107 /* LocationRow.swift in Sources */,
 				29881DCB1C6F036D00CB3E69 /* GoodDeed.swift in Sources */,
 				29C9E4AA1C6ED8D90065EFB3 /* FirstViewController.swift in Sources */,
 				294FF3901C6EFB9400F6D103 /* Annotation.swift in Sources */,

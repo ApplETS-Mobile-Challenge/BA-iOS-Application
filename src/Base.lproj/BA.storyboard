@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4mD-fE-ZkV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4mD-fE-ZkV">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--BA-->
@@ -29,8 +29,13 @@
                             <constraint firstItem="iBj-kK-Zur" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="YZq-Qr-A9L"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" id="UlN-Xb-Cgm"/>
+                    <navigationItem key="navigationItem" title="BA" id="upr-Ie-UMW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="74E-tR-9Qc">
+                            <connections>
+                                <segue destination="WlK-FW-gsk" kind="modal" id="RbC-Dq-Tbd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="baMapView" destination="iBj-kK-Zur" id="rpA-dT-U3Q"/>
@@ -58,6 +63,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SOa-kv-1uN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-566" y="816"/>
+        </scene>
+        <!--AddBA Form View Controller-->
+        <scene sceneID="jgI-7R-KRC">
+            <objects>
+                <viewController id="2LB-wD-qas" customClass="AddBAFormViewController" customModule="BA_iOS_Application" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qvw-AY-yfV"/>
+                        <viewControllerLayoutGuide type="bottom" id="uK9-Fc-Ozz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dXK-LU-pRM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hG6-CV-D4L">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="NwJ-0a-Jt1">
+                            <connections>
+                                <action selector="cancelPressed:" destination="2LB-wD-qas" id="fxj-y8-ZUc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="L2q-k3-Vvw"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ajJ-T7-IDF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1772" y="816"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8AO-Ai-1XU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WlK-FW-gsk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aaO-Fw-4l9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2LB-wD-qas" kind="relationship" relationship="rootViewController" id="GJA-c6-tJQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mKy-y9-m2w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="960" y="816"/>
         </scene>
     </scenes>
     <resources>
