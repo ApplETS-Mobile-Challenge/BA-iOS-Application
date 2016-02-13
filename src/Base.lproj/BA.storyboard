@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--BA-->
@@ -20,13 +21,49 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="iBj-kK-Zur">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cd7-kH-zh1">
+                                <rect key="frame" x="534" y="16" width="50" height="50"/>
+                                <state key="normal" image="Location"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oqd-LZ-vLl">
+                                <rect key="frame" x="0.0" y="437" width="600" height="487.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Liste" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DzN-ga-ez3">
+                                        <rect key="frame" x="134" y="8" width="330" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="33" id="RsU-MQ-KjL"/>
+                                            <constraint firstAttribute="width" constant="330" id="VWV-2e-Zkd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBC-N6-UQ4">
+                                        <rect key="frame" x="531" y="10" width="49" height="30"/>
+                                        <state key="normal" title="Fermer"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="cBC-N6-UQ4" secondAttribute="trailing" constant="20" id="56X-S8-RmG"/>
+                                    <constraint firstItem="DzN-ga-ez3" firstAttribute="top" secondItem="oqd-LZ-vLl" secondAttribute="topMargin" id="7fb-Bk-9uq"/>
+                                    <constraint firstItem="cBC-N6-UQ4" firstAttribute="top" secondItem="oqd-LZ-vLl" secondAttribute="top" constant="10" id="fW0-E1-oI5"/>
+                                    <constraint firstItem="DzN-ga-ez3" firstAttribute="centerX" secondItem="oqd-LZ-vLl" secondAttribute="centerX" id="woq-Sp-pBR"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="iBj-kK-Zur" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" id="J9d-Dp-Olg"/>
                             <constraint firstItem="iBj-kK-Zur" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="JZg-hS-iTD"/>
+                            <constraint firstItem="oqd-LZ-vLl" firstAttribute="height" secondItem="iBj-kK-Zur" secondAttribute="height" id="MuZ-iZ-33Z"/>
+                            <constraint firstItem="oqd-LZ-vLl" firstAttribute="leading" secondItem="iBj-kK-Zur" secondAttribute="leading" id="PUd-Gx-jjF"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="oqd-LZ-vLl" secondAttribute="top" constant="50" id="QqJ-aV-cGb"/>
+                            <constraint firstItem="cd7-kH-zh1" firstAttribute="leading" secondItem="iBj-kK-Zur" secondAttribute="trailing" constant="-66" id="RZk-qk-5VT"/>
                             <constraint firstItem="iBj-kK-Zur" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="URv-KA-Ff0"/>
                             <constraint firstItem="iBj-kK-Zur" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="YZq-Qr-A9L"/>
+                            <constraint firstItem="iBj-kK-Zur" firstAttribute="top" secondItem="cd7-kH-zh1" secondAttribute="bottom" constant="-66" id="Zn8-Xv-eGd"/>
+                            <constraint firstItem="oqd-LZ-vLl" firstAttribute="width" secondItem="iBj-kK-Zur" secondAttribute="width" id="bbX-o3-hLU"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -34,6 +71,9 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="baMapView" destination="iBj-kK-Zur" id="rpA-dT-U3Q"/>
+                        <outlet property="closeBtn" destination="cBC-N6-UQ4" id="HQg-RY-Z1e"/>
+                        <outlet property="listUIView" destination="oqd-LZ-vLl" id="I7Q-kW-21q"/>
+                        <outlet property="locationBtn" destination="cd7-kH-zh1" id="fud-WR-tQH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -61,6 +101,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Location" width="50" height="50"/>
         <image name="first" width="30" height="30"/>
     </resources>
 </document>
