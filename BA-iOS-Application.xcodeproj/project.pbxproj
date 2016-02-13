@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		296FC85A1C6EE3780032AFF1 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FC8591C6EE3780032AFF1 /* MainTabBarViewController.swift */; };
 		29C9E4A81C6ED8D90065EFB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C9E4A71C6ED8D90065EFB3 /* AppDelegate.swift */; };
 		29C9E4AA1C6ED8D90065EFB3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C9E4A91C6ED8D90065EFB3 /* FirstViewController.swift */; };
 		29C9E4AC1C6ED8D90065EFB3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C9E4AB1C6ED8D90065EFB3 /* SecondViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		296FC8591C6EE3780032AFF1 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		29C9E4A41C6ED8D90065EFB3 /* BA-iOS-Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BA-iOS-Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C9E4A71C6ED8D90065EFB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29C9E4A91C6ED8D90065EFB3 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				29E6D8881C6EDCEB005A1B0C /* BA.storyboard */,
 				29E6D88D1C6EDED5005A1B0C /* Search.storyboard */,
 				29E6D88F1C6EDFE3005A1B0C /* BAViewController.swift */,
+				296FC8591C6EE3780032AFF1 /* MainTabBarViewController.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				296FC85A1C6EE3780032AFF1 /* MainTabBarViewController.swift in Sources */,
 				29C9E4AC1C6ED8D90065EFB3 /* SecondViewController.swift in Sources */,
 				29C9E4A81C6ED8D90065EFB3 /* AppDelegate.swift in Sources */,
 				29C9E4AA1C6ED8D90065EFB3 /* FirstViewController.swift in Sources */,
