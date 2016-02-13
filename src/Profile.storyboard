@@ -127,7 +127,7 @@
         <scene sceneID="a3x-l4-L8p">
             <objects>
                 <navigationController title="Profile" automaticallyAdjustsScrollViewInsets="NO" id="cPK-49-qGz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="profile" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Profil" image="profile" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="W1R-Lu-NqA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
