@@ -22,11 +22,17 @@ class UserRequest: BaseRequest {
     func getUser(callback: (User) -> Void) {
         
         let user1 = User(id: 1, username: "jajex", name: "Vincent", photo: "vincent", rating: 5, description: "Lorem ipsum dolor sit amet, adipiscing elit.", participations: [], goodDeeds: [])
+        
+        let user2 = User(id: 1, username: "jajex", name: "Croix-Rouge", photo: "croix-rouge", rating: 5, description: "Lorem ipsum dolor sit amet, adipiscing elit.", participations: [], goodDeeds: [])
+        
+        let user3 = User(id: 1, username: "jajex", name: "Héma-Qc", photo: "hema-qc", rating: 5, description: "Lorem ipsum dolor sit amet, adipiscing elit.", participations: [], goodDeeds: [])
+        
+        let user4 = User(id: 1, username: "jajex", name: "Mathematique", photo: "math", rating: 5, description: "Lorem ipsum dolor sit amet, adipiscing elit.", participations: [], goodDeeds: [])
 
-        let gd1 = GoodDeed(id: 1, title: "Balayeuse", description: "Faire la balayeuse chez moi svp", address: "1001 Rue De la gauchetière O Montréal QC H3B 2P7 Canada", startDate: NSDate(), endDate: NSDate(), creator: user1, long: -73.560761, lat: 45.495310)
-        let gd2 = GoodDeed(id: 1, title: "Réparer mon bain", description: "Il coule", address: "970 Rue Notre-Dame O Montréal QC Canada", startDate: NSDate(), endDate: NSDate(), creator: user1, long: -73.561008, lat: 45.493310)
-        let gd3 = GoodDeed(id: 1, title: "Laver mon chien", description: "Il est plein de poux", address: "1360 Rue Saint-Jacques Montréal QC H3C 4M4 Canada", startDate: NSDate(), endDate: NSDate(), creator: user1, long: -73.558508, lat: 45.494498)
-        let gd4 = GoodDeed(id: 1, title: "Lorem ipsum", description: "Lorem ipsum dolor sit amet, adipiscing elit. Cras vel metus in lorem sodales eleife", address: "Montréal QC Canada", startDate: NSDate(), endDate: NSDate(), creator: user1, long: 45.4963, lat: -73.5621)
+        let gd1 = GoodDeed(id: 1, title: "Action Bénévole", description: "Chaque année, nous avons besoin de plusieurs bénévoles pour nous aider dans nos projets.", address: "1001 Rue De la gauchetière O Montréal QC H3B 2P7 Canada", startDate: NSDate(), endDate: NSDate(), creator: user1, long: -73.560761, lat: 45.495310)
+        let gd2 = GoodDeed(id: 1, title: "Croix-Rouge, réfugiés Syriens", description: "Nous sommes à la recherche de bénévoles pour nous aider à la distribution de nourriture non-périssable.", address: "970 Rue Notre-Dame O Montréal QC Canada", startDate: NSDate(), endDate: NSDate(), creator: user1, long: -73.561008, lat: 45.493310)
+        let gd3 = GoodDeed(id: 1, title: "Aide mathématiques de mon fils", description: "Il a beaucoup de la difficulté à l'école et a besoin de quelqu'un de compétant pour l'aider à faire des multiplications.", address: "1360 Rue Saint-Jacques Montréal QC H3C 4M4 Canada", startDate: NSDate(), endDate: NSDate(), creator: user1, long: -73.558508, lat: 45.494498)
+        let gd4 = GoodDeed(id: 1, title: "Fondation Martin Matte", description: "Nous cherchons des bénévoles pour nous aider à faire du porte à porte.", address: "Montréal QC Canada", startDate: NSDate(), endDate: NSDate(), creator: user1, long: -73.563991, lat: 45.510398)
         let gd5 = GoodDeed(id: 1, title: "Lorem ipsum", description: "Lorem ipsum dolor sit amet, adipiscing elit. Cras vel metus in lorem sodales eleife", address: "Montréal QC Canada", startDate: NSDate(), endDate: NSDate(), creator: user1, long: 45.4963, lat: -73.5621)
         let gd6 = GoodDeed(id: 1, title: "Lorem ipsum", description: "Lorem ipsum dolor sit amet, adipiscing elit. Cras vel metus in lorem sodales eleife", address: "Montréal QC Canada", startDate: NSDate(), endDate: NSDate(), creator: user1, long: 45.4963, lat: -73.5621)
         let gd7 = GoodDeed(id: 1, title: "Lorem ipsum", description: "Lorem ipsum dolor sit amet, adipiscing elit. Cras vel metus in lorem sodales eleife", address: "Montréal QC Canada", startDate: NSDate(), endDate: NSDate(), creator: user1, long: 45.4963, lat: -73.5621)
@@ -39,9 +45,10 @@ class UserRequest: BaseRequest {
         let gd14 = GoodDeed(id: 1, title: "Lorem ipsum", description: "Lorem ipsum dolor sit amet, adipiscing elit. Cras vel metus in lorem sodales eleife", address: "Montréal QC Canada", startDate: NSDate(), endDate: NSDate(), creator: user1, long: 45.4963, lat: -73.5621)
         let gd15 = GoodDeed(id: 1, title: "Lorem ipsum", description: "Lorem ipsum dolor sit amet, adipiscing elit. Cras vel metus in lorem sodales eleife", address: "Montréal QC Canada", startDate: NSDate(), endDate: NSDate(), creator: user1, long: 45.4963, lat: -73.5621)
         
-        user1.goodDeeds.append(gd1)
-        user1.goodDeeds.append(gd2)
-        user1.goodDeeds.append(gd3)
+        user2.goodDeeds.append(gd1)
+        user2.goodDeeds.append(gd2)
+        user2.goodDeeds.append(gd3)
+        user2.goodDeeds.append(gd4)
         
         let pr1 = Participation(id: 1, goodDeed: gd1, status: Status.OK, user: user1)
         let pr2 = Participation(id: 1, goodDeed: gd2, status: Status.OK, user: user1)
@@ -76,7 +83,7 @@ class UserRequest: BaseRequest {
         user1.participations.append(pr14)
         user1.participations.append(pr15)
         
-        callback(user1) 
+        callback(user2) 
         
 //        self.get("users/\(id)", parameters: nil) { (json: JSON?) in
 //            if let data = json {

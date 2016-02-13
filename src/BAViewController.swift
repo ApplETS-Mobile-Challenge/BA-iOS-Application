@@ -110,7 +110,7 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
             }
             
             //Maybe to be deleted
-            self.goodDeedArray = user.goodDeeds
+//            self.goodDeedArray = user.goodDeeds
         }
         
         self.baMapView.addAnnotations(self.goodDeedArray)
