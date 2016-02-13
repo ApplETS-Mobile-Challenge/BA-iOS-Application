@@ -18,6 +18,7 @@
 		27C7021A1C6F6AAF00FC475C /* AuthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C702191C6F6AAF00FC475C /* AuthUser.swift */; };
 		27C7021C1C6F6C9900FC475C /* GoodDeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C7021B1C6F6C9900FC475C /* GoodDeed.swift */; };
 		27C7021E1C6F6CA400FC475C /* OffersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C7021D1C6F6CA400FC475C /* OffersTableViewCell.swift */; };
+		27C702201C6F8D9B00FC475C /* ParticipationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C7021F1C6F8D9B00FC475C /* ParticipationRequest.swift */; };
 		2937E7A51C6F5AC800014BDE /* GoodDeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2937E7A41C6F5AC800014BDE /* GoodDeedCell.swift */; };
 		294FF38E1C6EF18B00F6D103 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294FF38D1C6EF18B00F6D103 /* MapKit.framework */; };
 		294FF3901C6EFB9400F6D103 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294FF38F1C6EFB9400F6D103 /* Annotation.swift */; };
@@ -55,6 +56,7 @@
 		27C702191C6F6AAF00FC475C /* AuthUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthUser.swift; sourceTree = "<group>"; };
 		27C7021B1C6F6C9900FC475C /* GoodDeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodDeed.swift; sourceTree = "<group>"; };
 		27C7021D1C6F6CA400FC475C /* OffersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersTableViewCell.swift; sourceTree = "<group>"; };
+		27C7021F1C6F8D9B00FC475C /* ParticipationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipationRequest.swift; sourceTree = "<group>"; };
 		2937E7A41C6F5AC800014BDE /* GoodDeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodDeedCell.swift; sourceTree = "<group>"; };
 		294FF38D1C6EF18B00F6D103 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		294FF38F1C6EFB9400F6D103 /* Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				2714FD021C6EE4300079D334 /* BaseRequest.swift */,
 				2714FD031C6EE4300079D334 /* UserRequest.swift */,
 				29C0C4EE1C6F8B630087943A /* GoodDeedRequest.swift */,
+				27C7021F1C6F8D9B00FC475C /* ParticipationRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				27C702181C6F228900FC475C /* (null) in Sources */,
 				29C0C4EF1C6F8B630087943A /* GoodDeedRequest.swift in Sources */,
 				29881DD21C6F038000CB3E69 /* ProfileViewController.swift in Sources */,
+				27C702201C6F8D9B00FC475C /* ParticipationRequest.swift in Sources */,
 				29E6D8901C6EDFE3005A1B0C /* BAViewController.swift in Sources */,
 				BA29B1011C6EEFD200F61A89 /* SearchTableViewController.swift in Sources */,
 				29881DCE1C6F036D00CB3E69 /* User.swift in Sources */,
