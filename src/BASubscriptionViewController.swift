@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Cosmos
 
 class BASubscriptionViewController: UIViewController {
     
@@ -17,6 +18,7 @@ class BASubscriptionViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var dateDebutLabel: UILabel!
     @IBOutlet weak var dateFinLabel: UILabel!
+    @IBOutlet weak var stars: CosmosView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +30,8 @@ class BASubscriptionViewController: UIViewController {
             self.dateDebutLabel.text = formatter.stringFromDate(gd.startDate)
             self.dateFinLabel.text = formatter.stringFromDate(gd.endDate)
             self.usernameLabel.text = gd.creator.name
-            self.imageView.image = UIImage(named: gd.creator.name.lowercaseString)
+            self.imageView.image = UIImage(named: gd.creator.username)
+            self.stars.rating = gd.creator.rating
         }
     }
 
@@ -42,7 +45,18 @@ class BASubscriptionViewController: UIViewController {
     }
 
     @IBAction func propositionTapped() {
-        
+        let userID = (UIApplication.sharedApplication().delegate as! AppDelegate).currentUserId
+        if let gd = self.goodDeed, uid = userID {
+            GoodDeedRequest.sharedInstance.postSubscription(gd.id, userId: uid, callback: { [unowned self] success in
+                if success {
+                    self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+                } else {
+                    let ac = UIAlertController(title: "Error posting", message: "Couldn't post to the super API", preferredStyle: .Alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                    self.presentViewController(ac, animated: true, completion: nil)
+                }
+            })
+        }
     }
 
 }

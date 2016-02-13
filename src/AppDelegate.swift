@@ -12,6 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var currentUserId: Int?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -22,6 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         mainTabBarViewController.selectedIndex = 1
         
         self.window?.rootViewController = mainTabBarViewController
+        
+        if let path = NSBundle.mainBundle().pathForResource("Config", ofType: "plist"), dict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
+            currentUserId = (dict["currentUserId"] as! Int)
+        }
         
         return true
     }

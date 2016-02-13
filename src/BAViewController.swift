@@ -162,7 +162,7 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
         view.rightCalloutAccessoryView = button
         if let a = view.annotation as? GoodDeed {
             let imgView = UIImageView()
-            imgView.image = UIImage(named: a.creator.name.lowercaseString)
+            imgView.image = UIImage(named: a.creator.username)
             imgView.frame = CGRectMake(0, 0, 50, 50)
             view.leftCalloutAccessoryView = imgView
         }

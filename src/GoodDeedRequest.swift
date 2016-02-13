@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+import Alamofire
 
 class GoodDeedRequest: BaseRequest {
     
@@ -28,6 +29,17 @@ class GoodDeedRequest: BaseRequest {
 //                    callback(nil)
                 }
             }
+        }
+    }
+    
+    func postSubscription(goodDeedId: Int, userId: Int, callback: (Bool)->()) {
+        Alamofire.request(.POST, Constants.api.baseURL + "/participations", parameters: ["good-deed-id": goodDeedId, "user-id": userId], encoding: .JSON).response { request, response, data, error in
+            if error == nil {
+                callback(true)
+            } else {
+                callback(false)
+            }
+            
         }
     }
 }

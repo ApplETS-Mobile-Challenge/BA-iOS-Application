@@ -326,6 +326,7 @@
                         <outlet property="dateFinLabel" destination="dB2-lW-e7h" id="ozx-NB-nlX"/>
                         <outlet property="descTextView" destination="ng3-om-6jd" id="v64-8g-uLp"/>
                         <outlet property="imageView" destination="qk0-GI-axS" id="fCK-UV-45M"/>
+                        <outlet property="rating" destination="M1o-y4-5s9" id="xY3-VP-FzA"/>
                         <outlet property="usernameLabel" destination="YAg-L5-J18" id="aD9-TM-ZJg"/>
                     </connections>
                 </viewController>
