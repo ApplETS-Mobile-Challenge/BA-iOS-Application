@@ -37,6 +37,8 @@
 		29E6D88E1C6EDED5005A1B0C /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29E6D88D1C6EDED5005A1B0C /* Search.storyboard */; };
 		29E6D8901C6EDFE3005A1B0C /* BAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D88F1C6EDFE3005A1B0C /* BAViewController.swift */; };
 		725886618F0857C1D9D6B24E /* Pods_BA_iOS_Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4CCF6191C1F3AB8959B409 /* Pods_BA_iOS_Application.framework */; };
+		BA68EC761C6F825600C30161 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA68EC751C6F825600C30161 /* Login.storyboard */; };
+		BA68EC781C6F885A00C30161 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68EC771C6F885A00C30161 /* LoginViewController.swift */; };
 		FB301C841C6EF89F0049D107 /* LocationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB301C831C6EF89F0049D107 /* LocationRow.swift */; };
 		FB301C861C6EF9650049D107 /* LocationSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB301C851C6EF9650049D107 /* LocationSelectionViewController.swift */; };
 		FB301C891C6F18AE0049D107 /* AddBAFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB301C881C6F18AE0049D107 /* AddBAFormViewController.swift */; };
@@ -74,6 +76,8 @@
 		29E6D88F1C6EDFE3005A1B0C /* BAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BAViewController.swift; sourceTree = "<group>"; };
 		41864DB90E6FC6C612220D2C /* Pods-BA-iOS-Application.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BA-iOS-Application.release.xcconfig"; path = "Pods/Target Support Files/Pods-BA-iOS-Application/Pods-BA-iOS-Application.release.xcconfig"; sourceTree = "<group>"; };
 		41E6490237B698289CB876AF /* Pods-BA-iOS-Application.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BA-iOS-Application.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BA-iOS-Application/Pods-BA-iOS-Application.debug.xcconfig"; sourceTree = "<group>"; };
+		BA68EC751C6F825600C30161 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		BA68EC771C6F885A00C30161 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FB301C831C6EF89F0049D107 /* LocationRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationRow.swift; sourceTree = "<group>"; };
 		FB301C851C6EF9650049D107 /* LocationSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSelectionViewController.swift; sourceTree = "<group>"; };
 		FB301C881C6F18AE0049D107 /* AddBAFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBAFormViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 				29E6D88F1C6EDFE3005A1B0C /* BAViewController.swift */,
 				294FF38F1C6EFB9400F6D103 /* Annotation.swift */,
 				27C702111C6F202B00FC475C /* OffersViewController.swift */,
+				BA68EC771C6F885A00C30161 /* LoginViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				27C7021D1C6F6CA400FC475C /* OffersTableViewCell.swift */,
 				FB301C821C6EF85E0049D107 /* FormRow */,
 				27C7020D1C6F098400FC475C /* ParticipationTableViewCell.swift */,
+				BA68EC751C6F825600C30161 /* Login.storyboard */,
 				27C7020E1C6F098400FC475C /* ParticipationTableViewCell.xib */,
 				29E6D88B1C6EDD15005A1B0C /* Profile.storyboard */,
 				29E6D88D1C6EDED5005A1B0C /* Search.storyboard */,
@@ -281,6 +287,7 @@
 				27C702141C6F21F200FC475C /* OffersTableViewCell.xib in Resources */,
 				29E6D88E1C6EDED5005A1B0C /* Search.storyboard in Resources */,
 				29E6D88A1C6EDCEB005A1B0C /* BA.storyboard in Resources */,
+				BA68EC761C6F825600C30161 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +358,7 @@
 				2714FD071C6EE4390079D334 /* Constants.swift in Sources */,
 				2937E7A51C6F5AC800014BDE /* GoodDeedCell.swift in Sources */,
 				FB301C861C6EF9650049D107 /* LocationSelectionViewController.swift in Sources */,
+				BA68EC781C6F885A00C30161 /* LoginViewController.swift in Sources */,
 				FB301C841C6EF89F0049D107 /* LocationRow.swift in Sources */,
 				29881DCB1C6F036D00CB3E69 /* (null) in Sources */,
 				29C9E4AA1C6ED8D90065EFB3 /* FirstViewController.swift in Sources */,
