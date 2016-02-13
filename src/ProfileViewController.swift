@@ -190,17 +190,17 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     private func loadParticipations() {
         //TODO: loaded avec le bon user
-        ParticipationRequest.sharedInstance.getParticipationsByUser(self.user!.id) { (participations: [Participation]) in
-            self.user?.participations = participations
-            self.loadOffers()
-        }
+//        ParticipationRequest.sharedInstance.getParticipationsByUser(self.user!.id) { (participations: [Participation]) in
+//            self.user?.participations = participations
+//            self.loadOffers()
+//        }
     }
     
     private func loadOffers() {
-        ParticipationRequest.sharedInstance.getParticipationsByUser(self.user!.id) { (offers: [Participation]) in
-            self.offers = offers
-            self.initFields()
-        }
+//        ParticipationRequest.sharedInstance.getParticipationsByUser(self.user!.id) { (offers: [Participation]) in
+//            self.offers = offers
+//            self.initFields()
+//        }
     }
     
     private func initFields() {
