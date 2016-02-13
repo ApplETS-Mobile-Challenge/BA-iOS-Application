@@ -38,6 +38,7 @@
 		29E6D88E1C6EDED5005A1B0C /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29E6D88D1C6EDED5005A1B0C /* Search.storyboard */; };
 		29E6D8901C6EDFE3005A1B0C /* BAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E6D88F1C6EDFE3005A1B0C /* BAViewController.swift */; };
 		725886618F0857C1D9D6B24E /* Pods_BA_iOS_Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4CCF6191C1F3AB8959B409 /* Pods_BA_iOS_Application.framework */; };
+		BA29B1011C6EEFD200F61A89 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA29B1001C6EEFD200F61A89 /* SearchTableViewController.swift */; };
 		FB301C841C6EF89F0049D107 /* LocationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB301C831C6EF89F0049D107 /* LocationRow.swift */; };
 		FB301C861C6EF9650049D107 /* LocationSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB301C851C6EF9650049D107 /* LocationSelectionViewController.swift */; };
 		FB301C891C6F18AE0049D107 /* AddBAFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB301C881C6F18AE0049D107 /* AddBAFormViewController.swift */; };
@@ -76,6 +77,7 @@
 		29E6D88F1C6EDFE3005A1B0C /* BAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BAViewController.swift; sourceTree = "<group>"; };
 		41864DB90E6FC6C612220D2C /* Pods-BA-iOS-Application.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BA-iOS-Application.release.xcconfig"; path = "Pods/Target Support Files/Pods-BA-iOS-Application/Pods-BA-iOS-Application.release.xcconfig"; sourceTree = "<group>"; };
 		41E6490237B698289CB876AF /* Pods-BA-iOS-Application.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BA-iOS-Application.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BA-iOS-Application/Pods-BA-iOS-Application.debug.xcconfig"; sourceTree = "<group>"; };
+		BA29B1001C6EEFD200F61A89 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		FB301C831C6EF89F0049D107 /* LocationRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationRow.swift; sourceTree = "<group>"; };
 		FB301C851C6EF9650049D107 /* LocationSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSelectionViewController.swift; sourceTree = "<group>"; };
 		FB301C881C6F18AE0049D107 /* AddBAFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBAFormViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		2782F79D1C6EE30A009EB714 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BA29B1001C6EEFD200F61A89 /* SearchTableViewController.swift */,
 				FB301C881C6F18AE0049D107 /* AddBAFormViewController.swift */,
 				FB301C851C6EF9650049D107 /* LocationSelectionViewController.swift */,
 				29881DD11C6F038000CB3E69 /* ProfileViewController.swift */,
@@ -365,6 +368,7 @@
 				29C0C4EF1C6F8B630087943A /* GoodDeedRequest.swift in Sources */,
 				29881DD21C6F038000CB3E69 /* ProfileViewController.swift in Sources */,
 				29E6D8901C6EDFE3005A1B0C /* BAViewController.swift in Sources */,
+				BA29B1011C6EEFD200F61A89 /* SearchTableViewController.swift in Sources */,
 				29881DCE1C6F036D00CB3E69 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
