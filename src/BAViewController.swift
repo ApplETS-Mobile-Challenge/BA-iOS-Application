@@ -25,6 +25,7 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
     
     //Fictive GoodDeed to mock the map
     var goodDeedArray: [GoodDeed] = []
+    var annotationArray: [Annotation] = []
     
     var firstGoodDeed: GoodDeed?
     
@@ -32,11 +33,8 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initGoodDeeds()
-        placeMarks()
-        
         closeBtn.hidden = true
-        listViewYOriginalPosition = listUIView.frame.origin.y + 70 //Adding 70 for top layout guide
+        listViewYOriginalPosition = listUIView.frame.origin.y + 130 //Adding 70 for top layout guide
         
         //Handle touch on listView
         let tap = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
@@ -56,6 +54,7 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
+            placeMarks()
         }
         else {
             print("Location service disabled")
@@ -63,30 +62,22 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
         
     }
     
-    func initGoodDeeds() {
-        firstGoodDeed!.id = 1
-        firstGoodDeed!.address = "1001 Rue De la gauchetière O Montréal QC H3B 2P7 Canada"
-        firstGoodDeed!.description = "Demande de réparation de salle de bain"
-        firstGoodDeed!.status = Status.Pending
-        goodDeedArray.append(firstGoodDeed!)
-    }
-    
     func placeMarks() {
-        let geocoder = CLGeocoder()
-
-        for oneGoodDeed in goodDeedArray {
+        
+        UserRequest.sharedInstance.getUser() { (user: User) in
             
-            geocoder.geocodeAddressString(oneGoodDeed.address, completionHandler: {(placemarks, error) -> Void in
-                if((error) != nil){
-                    print("Error", error)
-                }
-                if let placemark = placemarks?.first {
-                    var coordinates: CLLocationCoordinate2D = placemark.location!.coordinate
-                    var annotation: Annotation! = Annotation.init(title: oneGoodDeed.title, locationName: oneGoodDeed.description, discipline: oneGoodDeed.description, coordinate: coordinates)
-                    self.baMapView.addAnnotation(annotation)
-                }
-            })
+            for oneGoodDeed in user.goodDeeds {
+                
+                let coordinates: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: oneGoodDeed.lat, longitude: oneGoodDeed.long)
+                let annotation: Annotation! = Annotation.init(title: oneGoodDeed.title, locationName: oneGoodDeed.description, discipline: oneGoodDeed.description, coordinate: coordinates)
+                self.annotationArray.append(annotation)
+                print(oneGoodDeed.address)
+                
+            }
+            
         }
+        
+        self.baMapView.addAnnotations(self.annotationArray)
         
     }
     

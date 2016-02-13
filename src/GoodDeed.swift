@@ -17,8 +17,9 @@ class GoodDeed {
     var address: String
     var startDate: NSDate
     var endDate: NSDate
-    var status: Status
     var creator: User
+    var long: Double
+    var lat: Double
     
     init(json: JSON) {
         self.id = json["id"].intValue
@@ -27,7 +28,20 @@ class GoodDeed {
         self.address = json["address"].string!
         self.startDate = DateHelper.instance.dateFromString(json["start_at"].string!)!
         self.endDate = DateHelper.instance.dateFromString(json["end_at"].string!)!
-        self.status = Status(rawValue: json["status"]["name"].string!)!
         self.creator = User(json: json["creator"])
+        self.long = json["longitude"].doubleValue
+        self.lat = json["latitude"].doubleValue
+    }
+    
+    init(id: Int, title: String, description: String, address: String, startDate: NSDate, endDate: NSDate, creator: User, long: Double, lat: Double) {
+        self.id = id
+        self.title = title
+        self.description = description
+        self.address = address
+        self.startDate = startDate
+        self.endDate = endDate
+        self.creator = creator
+        self.long = long
+        self.lat = lat
     }
 }

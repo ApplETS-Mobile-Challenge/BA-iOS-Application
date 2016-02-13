@@ -29,7 +29,7 @@
         <scene sceneID="Xcm-ig-pN2">
             <objects>
                 <viewControllerPlaceholder storyboardName="BA" id="jaw-hh-WdH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Swc-aR-XqN"/>
+                    <tabBarItem key="tabBarItem" title="Carte" image="Map_Icon" selectedImage="Map_Icon" id="Swc-aR-XqN"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="29Z-Kp-NVx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -39,7 +39,7 @@
         <scene sceneID="sdQ-4v-lkR">
             <objects>
                 <viewControllerPlaceholder storyboardName="Profile" id="0Wb-o5-O1f" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="8Na-mh-oKV"/>
+                    <tabBarItem key="tabBarItem" title="" selectedImage="Map_Icon" id="8Na-mh-oKV"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mu5-DZ-qz4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -56,4 +56,7 @@
             <point key="canvasLocation" x="231.5" y="488"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Map_Icon" width="30" height="30"/>
+    </resources>
 </document>
