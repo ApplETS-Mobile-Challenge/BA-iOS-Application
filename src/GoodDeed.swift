@@ -9,6 +9,7 @@
 import Foundation
 import SwiftyJSON
 import MapKit
+import CoreLocation
 
 class GoodDeed: NSObject, MKAnnotation {
     
@@ -23,6 +24,7 @@ class GoodDeed: NSObject, MKAnnotation {
     var lat: Double
     let locationName: String
     let coordinate: CLLocationCoordinate2D
+    var distance: Double
     
     init(json: JSON) {
         self.id = json["id"].intValue
@@ -36,6 +38,7 @@ class GoodDeed: NSObject, MKAnnotation {
         self.lat = json["latitude"].doubleValue
         self.coordinate = CLLocationCoordinate2D(latitude: self.lat, longitude: self.long)
         self.locationName = self.desc
+        self.distance = 0
     }
     
     init(id: Int, title: String, description: String, address: String, startDate: NSDate, endDate: NSDate, creator: User, long: Double, lat: Double) {
@@ -50,9 +53,17 @@ class GoodDeed: NSObject, MKAnnotation {
         self.lat = lat
         self.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
         self.locationName = self.desc
+        self.distance = 0
     }
     
     var subtitle: String? {
         return locationName
+    }
+    
+    func getDistanceFromUser(source:CLLocation) -> Double {
+        let destination = CLLocation(latitude: lat, longitude: long)
+        let distanceMeters = source.distanceFromLocation(destination)
+        self.distance = (distanceMeters / 1000)
+        return self.distance
     }
 }

@@ -16,6 +16,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var starRating: CosmosView!
     @IBOutlet weak var pendingOffersButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var pendingOffersTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var nameLabel: UILabel!
 
     static let storyboardName = "Profile"
     static let viewControllerIdentifier = "ProfileViewController"
@@ -25,6 +27,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     var user: User?
     var pendingParticipations: [Participation] = []
     var completedParticipations: [Participation] = []
+    var offers: [Participation] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +66,16 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.statusImage.image = cell.statusImage.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
             cell.statusImage.tintColor = UIColor(red: 0/255, green: 146/255, blue: 214/255, alpha: 1.0) /* #0092d6 */
             
+            let timeDifHours = participation.goodDeed.startDate.timeIntervalSinceNow
+            
+            if timeDifHours > 86400 {
+                cell.timeLabel.text = "\(Int(ceil(timeDifHours / 86400)))j"
+            } else if timeDifHours > 3600 {
+                cell.timeLabel.text = "\(Int(ceil(timeDifHours / 3600)))h"
+            } else {
+                cell.timeLabel.text = "\(Int(ceil(timeDifHours / 60)))m"
+            }
+            
         } else if indexPath.section == 1 {
             let participation = self.completedParticipations[indexPath.row]
             cell.participationImage.image = UIImage(named: participation.goodDeed.creator.photo)
@@ -70,6 +83,16 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.statusImage.image = UIImage(named: "checkmark")
             cell.statusImage.image = cell.statusImage.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
             cell.statusImage.tintColor = UIColor(red: 45/255, green: 191/255, blue: 77/255, alpha: 1.0) /* #2dbf4d */
+            
+            let timeDifHours = participation.goodDeed.endDate.timeIntervalSinceNow
+            
+            if timeDifHours > 86400 {
+                cell.timeLabel.text = "\(Int(ceil(timeDifHours / 86400)))j"
+            } else if timeDifHours > 3600 {
+                cell.timeLabel.text = "\(Int(ceil(timeDifHours / 3600)))h"
+            } else {
+                cell.timeLabel.text = "\(Int(ceil(timeDifHours / 60)))m"
+            }
         }
         
         return cell
@@ -116,7 +139,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func viewPendingOffers(sender: UIButton!) {
         if let navigationController = self.navigationController {
-            let pvc = OffersViewController.detailViewControllerForOffers(self.pendingParticipations)
+            let pvc = OffersViewController.detailViewControllerForOffers(self.offers)
             navigationController.pushViewController(pvc, animated: true)
         }
     }
@@ -131,19 +154,48 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     private func loadUser() {
+        //TODO: loaded avec le bon user
         UserRequest.sharedInstance.getUser() { (user: User) in
             self.user = user
-            
-            self.profileImage.image = UIImage(named: user.photo)
-            self.descriptionLabel.text = user.description
-            self.starRating.rating = user.rating
-            self.navigationItem.title = user.username
-            
-            self.pendingParticipations = user.participations.filter({ p in p.status == Status.Pending})
-            self.completedParticipations = user.participations.filter({ p in p.status == Status.OK})
-            
-            self.tableView.reloadData()
+            self.loadOffers()
         }
+    }
+    
+    private func loadOffers() {
+        UserRequest.sharedInstance.getOffers() { (offers: [Participation]) in
+            self.offers = offers
+            self.initFields()
+        }
+    }
+    
+    private func initFields() {
+        self.navigationItem.title = self.user!.username
+        self.nameLabel.text = self.user!.name
+        self.profileImage.image = UIImage(named: self.user!.photo)
+        self.descriptionLabel.text = self.user!.description
+        self.starRating.rating = self.user!.rating
+        
+        if self.user!.id == AuthUser.sharedInstance.id {
+            if(self.offers.count == 0) {
+                self.hideOfferButton()
+            } else if(self.offers.count == 1) {
+                self.pendingOffersButton.setTitle("1 Offre en attente", forState: .Normal)
+            } else {
+                self.pendingOffersButton.setTitle("\(self.offers.count) Offres en attente", forState: .Normal)
+            }
+        } else {
+            self.hideOfferButton()
+        }
+        
+        self.pendingParticipations = self.user!.participations.filter({ p in p.status == Status.Pending})
+        self.completedParticipations = self.user!.participations.filter({ p in p.status == Status.OK})
+        
+        self.tableView.reloadData()
+    }
+    
+    private func hideOfferButton() {
+        self.pendingOffersTopConstraint.constant = -40
+        self.pendingOffersButton.hidden = true
     }
 }
 

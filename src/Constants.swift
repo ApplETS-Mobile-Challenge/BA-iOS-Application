@@ -10,6 +10,6 @@ import Foundation
 
 public struct Constants {
     struct api {
-        static let baseURL = ""
+        static let baseURL = "http://159.203.27.0:8080/"
     }
 }

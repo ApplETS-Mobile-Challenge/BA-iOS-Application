@@ -89,4 +89,20 @@ class UserRequest: BaseRequest {
 //            }
 //        }
     }
+    
+    func getUsers(callback: ([User]) -> Void) {
+        
+        var users : [User] = []
+        
+        let user1 = User(id: 1, username: "jajex", name: "Vincent", photo: "vincent", rating: 5, description: "Lorem ipsum dolor sit amet, adipiscing elit.", participations: [], goodDeeds: [])
+        
+        let user2 = User(id: 1, username: "ririche", name: "Richer", photo: "vincent", rating: 5, description: "Lorem ipsum dolor sit amet, adipiscing elit.", participations: [], goodDeeds: [])
+        
+        
+        users.append(user1)
+        users.append(user2)
+                callback(users)
+    
+    }
+
 }

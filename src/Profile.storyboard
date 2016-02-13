@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cPK-49-qGz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cPK-49-qGz">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan, enim non egestas pharetra" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bzz-eR-hwU">
-                                <rect key="frame" x="140" y="104" width="440" height="34"/>
+                                <rect key="frame" x="140" y="113" width="440" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -47,9 +47,15 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFB-su-fgN" customClass="CosmosView" customModule="Cosmos">
-                                <rect key="frame" x="140" y="146" width="120" height="20"/>
+                                <rect key="frame" x="140" y="155" width="120" height="20"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flG-Ck-I7k">
+                                <rect key="frame" x="140" y="84" width="99" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -64,6 +70,7 @@
                             <constraint firstItem="u9I-Ec-v2J" firstAttribute="top" secondItem="thF-yj-2V9" secondAttribute="bottom" constant="20" id="OoV-6V-5Pw"/>
                             <constraint firstItem="IZi-ce-EYW" firstAttribute="top" secondItem="u9I-Ec-v2J" secondAttribute="bottom" constant="20" id="TQX-cZ-Icg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="u9I-Ec-v2J" secondAttribute="trailing" id="bwA-Qd-e5M"/>
+                            <constraint firstItem="Bzz-eR-hwU" firstAttribute="top" secondItem="flG-Ck-I7k" secondAttribute="bottom" constant="8" id="cHA-Jl-eS8"/>
                             <constraint firstItem="EFB-su-fgN" firstAttribute="leading" secondItem="thF-yj-2V9" secondAttribute="trailing" constant="20" id="cJx-Nw-sg4"/>
                             <constraint firstItem="Bzz-eR-hwU" firstAttribute="centerY" secondItem="thF-yj-2V9" secondAttribute="centerY" id="cpV-8r-PkD"/>
                             <constraint firstItem="thF-yj-2V9" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="8" id="d2i-NW-D7m"/>
@@ -71,8 +78,10 @@
                             <constraint firstItem="Bzz-eR-hwU" firstAttribute="top" secondItem="thF-yj-2V9" secondAttribute="top" constant="10" id="gfN-hu-Oh9"/>
                             <constraint firstItem="thF-yj-2V9" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="20" id="jtw-bj-4aZ"/>
                             <constraint firstItem="Bzz-eR-hwU" firstAttribute="leading" secondItem="EFB-su-fgN" secondAttribute="trailing" constant="-132" id="k4U-3w-C5E"/>
+                            <constraint firstItem="flG-Ck-I7k" firstAttribute="leading" secondItem="thF-yj-2V9" secondAttribute="trailing" constant="20" id="lvw-Fw-H4f"/>
                             <constraint firstAttribute="leadingMargin" secondItem="u9I-Ec-v2J" secondAttribute="leading" id="mpq-Mv-x3c"/>
                             <constraint firstItem="IZi-ce-EYW" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-20" id="muW-Xf-62g"/>
+                            <constraint firstItem="flG-Ck-I7k" firstAttribute="top" secondItem="thF-yj-2V9" secondAttribute="top" id="opn-Tf-AJ6"/>
                             <constraint firstItem="Bzz-eR-hwU" firstAttribute="centerY" secondItem="thF-yj-2V9" secondAttribute="centerY" multiplier="0.9" id="s4U-Rs-gs4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="thF-yj-2V9" secondAttribute="trailing" constant="480" id="x2w-ge-D0t"/>
                             <constraint firstItem="Bzz-eR-hwU" firstAttribute="leading" secondItem="thF-yj-2V9" secondAttribute="trailing" constant="20" id="yGN-K8-IpC"/>
@@ -88,6 +97,7 @@
                                 <exclude reference="cpV-8r-PkD"/>
                                 <exclude reference="gfN-hu-Oh9"/>
                                 <exclude reference="k4U-3w-C5E"/>
+                                <exclude reference="s4U-Rs-gs4"/>
                             </mask>
                         </variation>
                     </view>
@@ -95,7 +105,9 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="Bzz-eR-hwU" id="GmZ-hc-BQC"/>
+                        <outlet property="nameLabel" destination="flG-Ck-I7k" id="OZz-HO-v4T"/>
                         <outlet property="pendingOffersButton" destination="u9I-Ec-v2J" id="9kP-cz-jrU"/>
+                        <outlet property="pendingOffersTopConstraint" destination="OoV-6V-5Pw" id="C3P-LT-ttc"/>
                         <outlet property="profileImage" destination="thF-yj-2V9" id="hzh-AV-zCL"/>
                         <outlet property="starRating" destination="EFB-su-fgN" id="C8M-iD-dRH"/>
                         <outlet property="tableView" destination="IZi-ce-EYW" id="nyR-ly-7UB"/>
