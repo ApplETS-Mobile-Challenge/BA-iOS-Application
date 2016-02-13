@@ -17,6 +17,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var pendingOffersButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var pendingOffersTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var nameLabel: UILabel!
 
     static let storyboardName = "Profile"
     static let viewControllerIdentifier = "ProfileViewController"
@@ -169,6 +170,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     private func initFields() {
         self.navigationItem.title = self.user!.username
+        self.nameLabel.text = self.user!.name
         self.profileImage.image = UIImage(named: self.user!.photo)
         self.descriptionLabel.text = self.user!.description
         self.starRating.rating = self.user!.rating

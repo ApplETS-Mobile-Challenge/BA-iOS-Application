@@ -49,13 +49,25 @@ class OffersViewController : UITableViewController {
         return self.offers.count
     }
     
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            self.offers.removeAtIndex(indexPath.row)
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
+    }
+    
     func selectOffer(sender: UIButton!) {
         let alert = UIAlertController(title: "", message: "Êtes-vous certain(e) de vouloir accepter cette offre?", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
             switch action.style{
             case .Default:
-                self.offers.removeAtIndex(sender.tag)
-                self.tableView.reloadData()
+                let indexPath = self.tableView.indexPathForCell(sender.superview?.superview as! UITableViewCell)
+                self.offers.removeAtIndex(indexPath!.row)
+                self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
                 
             case .Cancel:
                 print("cancel")
