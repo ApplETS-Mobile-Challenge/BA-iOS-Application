@@ -16,6 +16,9 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
     @IBOutlet weak var locationBtn: UIButton!
     @IBOutlet weak var listUIView: UIView!
     @IBOutlet weak var closeBtn: UIButton!
+    var selectedGoodDeed: GoodDeed?
+    
+    private let annotationSegueIdentifier = "AnnotationModalSegueIdentifier"
     @IBOutlet weak var goodDeedTableView: UITableView!
     
     private var locationManager:CLLocationManager! = nil
@@ -80,7 +83,7 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("GoodDeedCell", forIndexPath: indexPath) as! GoodDeedCell
         cell.goodDeedTitleLabel.text = goodDeedArray[indexPath.row].title
-        cell.goodDeedDescriptionLabel.text = goodDeedArray[indexPath.row].description
+        cell.goodDeedDescriptionLabel.text = goodDeedArray[indexPath.row].desc
         cell.goodDeedImageView.image = UIImage(named: "vincent")
         if (self.userLocation != nil) {
             cell.goodDeedDistanceFromUserLabel.text = String(format:"%.2f", goodDeedArray[indexPath.row].getDistanceFromUser(self.userLocation)) + " km"
@@ -99,16 +102,19 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
             for oneGoodDeed in user.goodDeeds {
                 
                 let coordinates: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: oneGoodDeed.lat, longitude: oneGoodDeed.long)
-                let annotation: Annotation! = Annotation.init(title: oneGoodDeed.title, locationName: oneGoodDeed.description, discipline: oneGoodDeed.description, coordinate: coordinates)
+                let annotation: Annotation! = Annotation.init(title: oneGoodDeed.title!, locationName: oneGoodDeed.description, discipline: oneGoodDeed.description, coordinate: coordinates)
                 self.annotationArray.append(annotation)
                 self.goodDeedArray.append(oneGoodDeed)
                 print(oneGoodDeed.address)
                 
             }
             
+            
+            //Maybe to be deleted
+            self.goodDeedArray = user.goodDeeds
         }
         
-        self.baMapView.addAnnotations(self.annotationArray)
+        self.baMapView.addAnnotations(self.goodDeedArray)
         
     }
     
@@ -173,6 +179,21 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
     }
 
     
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        let button = UIButton(type: .DetailDisclosure)
+        button.frame = CGRectMake(0, 0, 23, 23)
+        button.addTarget(self, action: "baDetailTapped:", forControlEvents: .TouchUpInside)
+        view.rightCalloutAccessoryView = button
+        if let a = view.annotation as? GoodDeed {
+            let imgView = UIImageView()
+            imgView.image = UIImage(named: a.creator.name.lowercaseString)
+            imgView.frame = CGRectMake(0, 0, 50, 50)
+            view.leftCalloutAccessoryView = imgView
+        }
+        selectedGoodDeed = view.annotation as? GoodDeed
+    }
+    
+    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if shouldUpdateLocation {
             self.userLocation = CLLocation(latitude: (manager.location?.coordinate.latitude)! , longitude: (manager.location?.coordinate.longitude)!)
@@ -190,4 +211,29 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print(error.debugDescription)
     }
+    
+    func baDetailTapped(sender: UIButton) {
+        performSegueWithIdentifier(annotationSegueIdentifier, sender: sender)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let id = segue.identifier {
+            if id == annotationSegueIdentifier {
+                let nav = segue.destinationViewController as! UINavigationController
+                let vc = nav.viewControllers.first as! BASubscriptionViewController
+                vc.goodDeed = selectedGoodDeed
+            }
+        }
+        super.prepareForSegue(segue, sender: sender)
+    }
+    
+    func distanceBetweenUserAndGoodDeed(source:CLLocation,destination:CLLocation) -> Double {
+        let distanceMeters = source.distanceFromLocation(destination)
+        return (distanceMeters / 1000)
+    }
+    
+    func generateRouteBetweenTwoCoordinates(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) {
+        
+    }
+    
 }
