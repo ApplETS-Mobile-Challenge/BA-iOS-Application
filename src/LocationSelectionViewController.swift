@@ -15,6 +15,7 @@ public class LocationSelectionViewController : UIViewController, TypedRowControl
     public var row: RowOf<CLLocation>!
     public var completionCallback : ((UIViewController) -> ())?
     public var locationManager: CLLocationManager!
+    var annotation: Annotation? = nil
     
     lazy var mapView : MKMapView = { [unowned self] in
         let v = MKMapView(frame: self.view.bounds)
@@ -48,8 +49,7 @@ public class LocationSelectionViewController : UIViewController, TypedRowControl
         navigationItem.rightBarButtonItem = button
         
         if let value = row.value {
-            let region = MKCoordinateRegionMakeWithDistance(value.coordinate, 400, 400)
-            mapView.setRegion(region, animated: true)
+            updateMapPosition(value.coordinate)
         }
         else{
             if (CLLocationManager.locationServicesEnabled()) {
@@ -62,6 +62,15 @@ public class LocationSelectionViewController : UIViewController, TypedRowControl
         }
         updateTitle()
         
+    }
+    
+    public func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        if !annotation.isKindOfClass(MKUserLocation) {
+            let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationIdentifier")
+            pinView.animatesDrop = true
+            return pinView
+        }
+        return nil
     }
     
     func tappedDone(sender: UIBarButtonItem){
@@ -81,8 +90,7 @@ public class LocationSelectionViewController : UIViewController, TypedRowControl
         let userLocation: CLLocation = locations.last!
         row?.value = userLocation
         if let value = row.value {
-            let region = MKCoordinateRegionMakeWithDistance(value.coordinate, 400, 400)
-            mapView.setRegion(region, animated: true)
+            updateMapPosition(value.coordinate)
             mapView.showsUserLocation = true
         }
         manager.stopUpdatingLocation()
@@ -91,12 +99,22 @@ public class LocationSelectionViewController : UIViewController, TypedRowControl
     
     public func mapLongPress(recognizer: UIGestureRecognizer) {
         if recognizer.state == .Began {
+            if let a = self.annotation {
+                mapView.removeAnnotation(a)
+            }
             let touchPoint = recognizer.locationInView(mapView)
             let coordinate = mapView.convertPoint(touchPoint, toCoordinateFromView: mapView)
             row?.value = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
-            let region = MKCoordinateRegionMakeWithDistance(coordinate, 400, 400)
-            mapView.setRegion(region, animated: true)
+            let annotation = Annotation(title: "", locationName: "", discipline: "", coordinate: coordinate)
+            self.annotation = annotation
+            mapView.addAnnotation(annotation)
+            updateMapPosition(coordinate)
             updateTitle()
         }
+    }
+    
+    public func updateMapPosition(coordinate: CLLocationCoordinate2D) {
+        let region = MKCoordinateRegionMakeWithDistance(coordinate, 400, 400)
+        mapView.setRegion(region, animated: true)
     }
 }

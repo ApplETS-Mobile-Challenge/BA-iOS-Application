@@ -9,6 +9,7 @@
 import UIKit
 import Eureka
 import MapKit
+import SwiftyJSON
 
 class AddBAFormViewController: FormViewController {
     
@@ -33,5 +34,27 @@ class AddBAFormViewController: FormViewController {
     
     @IBAction func cancelPressed(sender: UIBarButtonItem) {
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func donePressed(sender: UIBarButtonItem) {
+        var formattedData = [String: AnyObject]()
+        for (tag, value) in form.values() {
+            guard let value = value else {
+                let ac = UIAlertController(title: "Erreur", message: "Le champs \(tag) n'est pas remplie", preferredStyle: .Alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                self.presentViewController(ac, animated: true, completion: nil)
+                return
+            }
+            if tag == "startDate" || tag == "endDate" {
+               let date = (value as! NSDate).timeIntervalSince1970
+                formattedData[tag] = date
+            } else if tag == "location" {
+                let coordinate = (value as! CLLocation).coordinate
+                formattedData[tag] = ["longitude": coordinate.longitude, "latitude": coordinate.latitude]
+            } else {
+                formattedData[tag] = (value as! AnyObject)
+            }
+        }
+        let jsonData = try? NSJSONSerialization.dataWithJSONObject(formattedData, options: .PrettyPrinted)
     }
 }
