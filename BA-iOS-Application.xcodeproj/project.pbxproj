@@ -95,6 +95,7 @@
 		2782F79D1C6EE30A009EB714 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BA29B1001C6EEFD200F61A89 /* SearchTableViewController.swift */,
 				FB301C881C6F18AE0049D107 /* AddBAFormViewController.swift */,
 				FB301C851C6EF9650049D107 /* LocationSelectionViewController.swift */,
 				29881DD11C6F038000CB3E69 /* ProfileViewController.swift */,
@@ -108,10 +109,6 @@
 		29881DC61C6F035400CB3E69 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2714FD081C6EE4F90079D334 /* ProfileViewController.swift */,
-				29C9E4A91C6ED8D90065EFB3 /* FirstViewController.swift */,
-				29E6D88F1C6EDFE3005A1B0C /* BAViewController.swift */,
-				BA29B1001C6EEFD200F61A89 /* SearchTableViewController.swift */,
 				29881DC71C6F036D00CB3E69 /* GoodDeed.swift */,
 				29881DC81C6F036D00CB3E69 /* Participation.swift */,
 				29881DC91C6F036D00CB3E69 /* Status.swift */,

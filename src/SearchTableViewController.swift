@@ -10,7 +10,7 @@ import UIKit
 
 class SearchTableViewController: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
 
-    var users = ["Richer", "Maxime", "Samuel", "Vincent"]
+    var users : [User] = []
     var userSearchResults:Array<String>?
     
     
@@ -18,6 +18,7 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, UIS
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.loadUsers()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -37,7 +38,7 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, UIS
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return users.count
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -48,10 +49,20 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, UIS
         let cell = tableView.dequeueReusableCellWithIdentifier("UserCell", forIndexPath: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = users[indexPath.row]
+        cell.textLabel?.text = users[indexPath.row].name
 
         return cell
     }
+    
+    private func loadUsers() {
+        UserRequest.sharedInstance.getUsers() { (users: [User]) in
+            self.users = users
+            self.tableView.reloadData()
+        }
+    }
+    
+    
+    
     
     /*func filterContentForSearchName(searchText: String) {
         //Filter the array using the filter method
