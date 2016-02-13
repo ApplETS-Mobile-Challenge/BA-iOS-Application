@@ -39,9 +39,9 @@ class UserRequest: BaseRequest {
         let gd14 = GoodDeed(id: 1, title: "Lorem ipsum", description: "Lorem ipsum dolor sit amet, adipiscing elit. Cras vel metus in lorem sodales eleife", address: "Montréal QC Canada", startDate: NSDate(), endDate: NSDate(), creator: user1, long: 45.4963, lat: -73.5621)
         let gd15 = GoodDeed(id: 1, title: "Lorem ipsum", description: "Lorem ipsum dolor sit amet, adipiscing elit. Cras vel metus in lorem sodales eleife", address: "Montréal QC Canada", startDate: NSDate(), endDate: NSDate(), creator: user1, long: 45.4963, lat: -73.5621)
         
-        user1.goodDeeds.append(gd1)
         user1.goodDeeds.append(gd2)
         user1.goodDeeds.append(gd3)
+        user1.goodDeeds.append(gd1)
         
         let pr1 = Participation(id: 1, goodDeed: gd1, status: Status.OK, user: user1)
         let pr2 = Participation(id: 1, goodDeed: gd2, status: Status.OK, user: user1)

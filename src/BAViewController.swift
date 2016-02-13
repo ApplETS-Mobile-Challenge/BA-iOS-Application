@@ -23,12 +23,11 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
     private var shouldUpdateLocation = true
     private var listViewIsOpen = false
     private var listViewYOriginalPosition: CGFloat! = nil
+    private var userLocation: CLLocation! = nil
     
     //Fictive GoodDeed to mock the map
     var goodDeedArray: [GoodDeed] = []
     var annotationArray: [Annotation] = []
-    
-    var firstGoodDeed: GoodDeed?
     
     
     override func viewDidLoad() {
@@ -51,12 +50,11 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
         
         //Handle touch on close btn
         closeBtn.addTarget(self, action: Selector("closeListView"), forControlEvents: .TouchUpInside)
+        locationBtn.addTarget(self, action: Selector("resetUpdateLocation"), forControlEvents: .TouchUpInside)
         
         //MapView
         baMapView.showsUserLocation = true
         baMapView.delegate = self
-        
-        locationBtn.addTarget(self, action: Selector("resetUpdateLocation"), forControlEvents: .TouchUpInside)
         
         //LocationManager
         locationManager = CLLocationManager()
@@ -73,13 +71,23 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
         
     }
     
+    //TableView Delegate Methods
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return goodDeedArray.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("GoodDeedCell", forIndexPath: indexPath) as! GoodDeedCell
-
+        cell.goodDeedTitleLabel.text = goodDeedArray[indexPath.row].title
+        cell.goodDeedDescriptionLabel.text = goodDeedArray[indexPath.row].description
+        cell.goodDeedImageView.image = UIImage(named: "vincent")
+        if self.userLocation != nil {
+            cell.goodDeedDistanceFromUserLabel.text = String(format:"%.1f", goodDeedArray[indexPath.row].getDistanceFromUser(self.userLocation)) + " km"
+        }
+        else {
+            cell.goodDeedDistanceFromUserLabel.text = "-"
+        }
+    
         return cell
     }
     
@@ -92,8 +100,7 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
                 let coordinates: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: oneGoodDeed.lat, longitude: oneGoodDeed.long)
                 let annotation: Annotation! = Annotation.init(title: oneGoodDeed.title, locationName: oneGoodDeed.description, discipline: oneGoodDeed.description, coordinate: coordinates)
                 self.annotationArray.append(annotation)
-                print(oneGoodDeed.address)
-                
+                self.goodDeedArray.append(oneGoodDeed)
             }
             
         }
@@ -103,7 +110,6 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
     }
     
     func handleTap(gestureRecognizer: UITapGestureRecognizer) {
-        
         let xPosition = listUIView.frame.origin.x
         let yPosition = baMapView.frame.origin.y
         let height = listUIView.frame.size.height
@@ -149,6 +155,7 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
         return false
     }
     
+    //If User did drag the map
     func mapView(mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
         mapChangedFromUserInteraction = mapViewRegionDidChangeFromUserInteraction()
         if (mapChangedFromUserInteraction) {
@@ -161,12 +168,13 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
             shouldUpdateLocation = false
         }
     }
-
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if shouldUpdateLocation {
-            let userLocation = CLLocation(latitude: (manager.location?.coordinate.latitude)! , longitude: (manager.location?.coordinate.longitude)!)
+            self.userLocation = CLLocation(latitude: (manager.location?.coordinate.latitude)! , longitude: (manager.location?.coordinate.longitude)!)
             centerMapOnLocation(userLocation)
+            self.goodDeedArray.sortInPlace { $0.distance < $1.distance }
+            self.goodDeedTableView.reloadData()
         }
     }
     
@@ -179,5 +187,15 @@ class BAViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDe
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print(error.debugDescription)
     }
+    
+    func distanceBetweenUserAndGoodDeed(source:CLLocation,destination:CLLocation) -> Double {
+        let distanceMeters = source.distanceFromLocation(destination)
+        return (distanceMeters / 1000)
+    }
+    
+    func generateRouteBetweenTwoCoordinates(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) {
+        
+    }
+    
     
 }

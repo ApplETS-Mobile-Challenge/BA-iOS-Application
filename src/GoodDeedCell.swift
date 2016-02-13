@@ -10,9 +10,9 @@ import UIKit
 
 class GoodDeedCell: UITableViewCell {
     
-    @IBOutlet weak var goodDeedImageView: UIView!
     @IBOutlet weak var goodDeedTitleLabel: UILabel!
     @IBOutlet weak var goodDeedDescriptionLabel: UILabel!
-    
+    @IBOutlet weak var goodDeedImageView: UIImageView!
+    @IBOutlet weak var goodDeedDistanceFromUserLabel: UILabel!
     
 }
