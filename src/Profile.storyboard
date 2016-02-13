@@ -33,7 +33,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9I-Ec-v2J">
                                 <rect key="frame" x="20" y="204" width="560" height="40"/>
-                                <color key="backgroundColor" red="0.02408159147" green="0.75003945709999997" blue="0.3039341545" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.17254901960784313" green="0.74901960784313726" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Ox5-Q9-vdG"/>
                                 </constraints>
@@ -105,11 +105,29 @@
             </objects>
             <point key="canvasLocation" x="870" y="816"/>
         </scene>
+        <!--Offres en attente-->
+        <scene sceneID="Ual-c4-cGN">
+            <objects>
+                <tableViewController storyboardIdentifier="OffersViewController" title="Offres en attente" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rRP-xC-MJI" customClass="OffersViewController" customModule="BA_iOS_Application" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="3q7-Ya-ebl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="rRP-xC-MJI" id="DQw-f8-iDV"/>
+                            <outlet property="delegate" destination="rRP-xC-MJI" id="ICg-W0-qKu"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tno-Lo-Zhz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1584" y="820"/>
+        </scene>
         <!--Profile-->
         <scene sceneID="a3x-l4-L8p">
             <objects>
                 <navigationController title="Profile" automaticallyAdjustsScrollViewInsets="NO" id="cPK-49-qGz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="second" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="W1R-Lu-NqA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
