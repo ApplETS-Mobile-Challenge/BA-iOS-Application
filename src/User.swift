@@ -33,7 +33,7 @@ class User {
         }
         
         self.goodDeeds = []
-        if let goodDeeds = json["good_deads"].array {
+        if let goodDeeds = json["good_deeds"].array {
             for goodDeed in goodDeeds {
                 self.goodDeeds.append(GoodDeed(json: goodDeed))
             }
